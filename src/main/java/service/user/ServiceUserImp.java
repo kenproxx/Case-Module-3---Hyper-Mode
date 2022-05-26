@@ -10,6 +10,16 @@ import java.sql.Date;
 import java.util.*;
 
 public class ServiceUserImp implements IServiceUser{
+    public void LoginUp(User user) throws SQLException {
+        try(Connection connection = DBHandle.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("")) {
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.executeUpdate();
+        }
+
+    }
     @Override
     public User selectAdmin() throws SQLException {
         User admin = null;
@@ -55,6 +65,7 @@ public class ServiceUserImp implements IServiceUser{
         } catch (SQLException ex) {
             System.err.println(Error.ERROR_014);
         }
+
     }
 
     @Override
