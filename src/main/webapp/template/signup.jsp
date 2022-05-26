@@ -83,7 +83,7 @@
 </nav>
 <!-- Navbar End -->
 
-
+<h1>${test}</h1>
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5">
     <div class="container py-5">
@@ -110,20 +110,20 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" required id="username" placeholder="Username">
+                                    <input type="text" class="form-control" required id="username" placeholder="Username" name="username">
                                     <label for="username">Username</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" required id="password" placeholder="Password">
+                                    <input type="password" class="form-control" required id="password" placeholder="Password" name="password">
                                     <label for="password">Password</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control"  id="subject" placeholder="Email">
-                                    <label for="subject">Email</label>
+                                    <input type="email" class="form-control"  id="email" placeholder="Email" name="email">
+                                    <label for="email">Email</label>
                                 </div>
                             </div>
 
@@ -232,5 +232,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+</div>
 </body>
 </html>

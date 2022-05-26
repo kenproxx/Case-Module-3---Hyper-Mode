@@ -14,7 +14,20 @@ public class UserServlet extends HttpServlet {
     ServiceUserImp serviceUserImp = new ServiceUserImp();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+        String action = request.getParameter("action");
+        if(action == null){
+            action = "";
+        }
+        switch (action) {
+            case "signUp":
+                showSignUp(request, response);
+        }
+    }
+
+    private void showSignUp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("template/signup.html");
+        request.setAttribute("test", "Đăng Ký Thằng công");
+        requestDispatcher.forward(request,response);
     }
 
     @Override
@@ -37,13 +50,16 @@ public class UserServlet extends HttpServlet {
     }
 
     private void login(HttpServletRequest request, HttpServletResponse response) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
     }
 
-    private void signUp(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+    private void signUp(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
         serviceUserImp.LoginUp(new User(username, password, email));
-        response.sendRedirect("product");
+
+        response.sendRedirect("template/signup.html");
     }
 }
