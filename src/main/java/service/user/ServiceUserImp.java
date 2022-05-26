@@ -19,6 +19,7 @@ public class ServiceUserImp implements IServiceUser{
             preparedStatement.executeUpdate();
         }
     }
+    //check database có trung nhau hay ko ;
     @Override
     public User selectAdmin() throws SQLException {
         User admin = null;

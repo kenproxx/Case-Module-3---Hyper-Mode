@@ -1,4 +1,5 @@
-
+CREATE DATABASE
+use
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -261,23 +262,23 @@ drop table IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 create TABLE `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `role_id` int NOT NULL,
-  `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `gender` bit(1) NOT NULL,
-  `date_of_birth` date NOT NULL,
-  `phone` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `status` int NOT NULL,
-  `created_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_role_fk` (`role_id`),
-  CONSTRAINT `user_role_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
+id` int NOT NULL AUTO_INCREMENT,
+`role_id` int ,
+`first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci ,
+`last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci ,
+`gender` bit(1) ,
+`date_of_birth` date,
+`phone` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci ,
+`address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci ,
+`email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`username` varchar(255) NOT NULL,
+`password` varchar(50) NOT NULL,
+`status` int ,
+`created_date` datetime ,
+`update_date` datetime ,
+PRIMARY KEY (`id`),
+KEY `user_role_fk` (`role_id`),
+CONSTRAINT `user_role_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
