@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
     private int id;
@@ -27,7 +27,7 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, int roleId, String firstName, String lastName, boolean gender, Date dateOfBirth, String phone, String email, int status, String address, String username, String password) {
+    public User(int id, int roleId, String firstName, String lastName, boolean gender, Date dateOfBirth, String phone, String email, String address, String username, String password, int status) {
         this.id = id;
         this.roleId = roleId;
         this.firstName = firstName;
@@ -42,18 +42,18 @@ public class User {
         this.password = password;
     }
 
-    public User(int roleId, String firstName, String lastName, boolean gender, Date dateOfBirth, String phone, String email, int status, String address, String username, String password) {
+    public User(int roleId, String firstName, String lastName, boolean gender, Date dateOfBirth, String phone, String address, String email, String username, String password, int status) {
         this.roleId = roleId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
-        this.email = email;
-        this.status = status;
         this.address = address;
+        this.email = email;
         this.username = username;
         this.password = password;
+        this.status = status;
     }
 
     public User(int id, String tempRole, String firstName, String lastName, String tempGender, Date dateOfBirth, String phone, String email, String tempStatus, String address, String username, String password) {
@@ -71,10 +71,10 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, String firstName, String lastName, int status) {
+    public User(int id, String firstName, int roleId, int status) {
         this.id = id;
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.roleId = roleId;
         this.status = status;
     }
 
@@ -118,7 +118,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public boolean isGender() {
+    public boolean getGender() {
         return gender;
     }
 
@@ -197,4 +197,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
