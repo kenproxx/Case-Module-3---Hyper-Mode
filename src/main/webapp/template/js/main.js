@@ -96,3 +96,13 @@
     
 })(jQuery);
 
+let curDate = new Date();
+let curDay = curDate.getUTCDate();
+let curMonth = curDate.getMonth() +1;
+let curYear = curDate.getFullYear();
+let curHours = curDate.getHours();
+let curMinutes = curDate.getMinutes();
+let curSecond = curDate.getSeconds();
+document.getElementById("current-time").innerHTML = curHours + ":" + curMinutes +
+    " - " + curDay + "/" + curMonth + "/" + curYear;
+

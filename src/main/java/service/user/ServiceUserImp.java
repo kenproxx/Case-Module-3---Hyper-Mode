@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ServiceUserImp implements IServiceUser{
+
     @Override
     public User selectAdmin() throws SQLException {
         User admin = null;
@@ -19,10 +20,11 @@ public class ServiceUserImp implements IServiceUser{
         ResultSet resultSet;
         String username;
         String password;
-        try{
-            connection =
+//        try{
+//            connection =
+        return new User();
         }
-    }
+//    }
 
     @Override
     public void createUser(User user) throws SQLException {
