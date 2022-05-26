@@ -1,5 +1,3 @@
-CREATE DATABASE playerdou;
-USE playerdou;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,10 +14,10 @@ USE playerdou;
 -- Table structure for table `attachment`
 --
 
-DROP TABLE IF EXISTS `attachment`;
+drop table IF EXISTS `attachment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `attachment` (
+create TABLE `attachment` (
   `id` int NOT NULL,
   `product_id` int NOT NULL,
   `image_link` text NOT NULL,
@@ -36,7 +34,7 @@ CREATE TABLE `attachment` (
 -- Dumping data for table `attachment`
 --
 
-LOCK TABLES `attachment` WRITE;
+lock TABLES `attachment` WRITE;
 /*!40000 ALTER TABLE `attachment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `attachment` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -45,10 +43,10 @@ UNLOCK TABLES;
 -- Table structure for table `bill`
 --
 
-DROP TABLE IF EXISTS `bill`;
+drop table IF EXISTS `bill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `bill` (
+create TABLE `bill` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `amount` double NOT NULL,
@@ -70,7 +68,7 @@ CREATE TABLE `bill` (
 -- Dumping data for table `bill`
 --
 
-LOCK TABLES `bill` WRITE;
+lock TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -79,10 +77,10 @@ UNLOCK TABLES;
 -- Table structure for table `bill_details`
 
 
-DROP TABLE IF EXISTS `bill_details`;
+drop table IF EXISTS `bill_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `bill_details` (
+create TABLE `bill_details` (
   `id` int NOT NULL AUTO_INCREMENT,
   `bill_id` int NOT NULL,
   `product_id` int NOT NULL,
@@ -102,7 +100,7 @@ CREATE TABLE `bill_details` (
 -- Dumping data for table `bill_details`
 --
 
-LOCK TABLES `bill_details` WRITE;
+lock TABLES `bill_details` WRITE;
 /*!40000 ALTER TABLE `bill_details` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bill_details` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -111,10 +109,10 @@ UNLOCK TABLES;
 -- Table structure for table `catalog`
 --
 
-DROP TABLE IF EXISTS `catalog`;
+drop table IF EXISTS `catalog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `catalog` (
+create TABLE `catalog` (
   `id` int NOT NULL AUTO_INCREMENT,
   `catalog_code` int NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -130,7 +128,7 @@ CREATE TABLE `catalog` (
 -- Dumping data for table `catalog`
 --
 
-LOCK TABLES `catalog` WRITE;
+lock TABLES `catalog` WRITE;
 /*!40000 ALTER TABLE `catalog` DISABLE KEYS */;
 /*!40000 ALTER TABLE `catalog` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -139,10 +137,10 @@ UNLOCK TABLES;
 -- Table structure for table `import`
 --
 
-DROP TABLE IF EXISTS `import`;
+drop table IF EXISTS `import`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `import` (
+create TABLE `import` (
   `id` int NOT NULL AUTO_INCREMENT,
   `product_id` int NOT NULL,
   `quantity` int NOT NULL,
@@ -162,7 +160,7 @@ CREATE TABLE `import` (
 -- Dumping data for table `import`
 --
 
-LOCK TABLES `import` WRITE;
+lock TABLES `import` WRITE;
 /*!40000 ALTER TABLE `import` DISABLE KEYS */;
 /*!40000 ALTER TABLE `import` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -171,10 +169,10 @@ UNLOCK TABLES;
 -- Table structure for table `catalog`
 --
 
-DROP TABLE IF EXISTS `product`;
+drop table IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product` (
+create TABLE `product` (
   `id` int NOT NULL AUTO_INCREMENT,
   `catalog_id` int NOT NULL,
   `product_code` int NOT NULL,
@@ -195,7 +193,7 @@ CREATE TABLE `product` (
 -- Dumping data for table `catalog`
 --
 
-LOCK TABLES `product` WRITE;
+lock TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -204,10 +202,10 @@ UNLOCK TABLES;
 -- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `role`;
+drop table IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `role` (
+create TABLE `role` (
   `id` int NOT NULL AUTO_INCREMENT,
   `role_name` varchar(255) NOT NULL,
   `status` int NOT NULL,
@@ -221,7 +219,7 @@ CREATE TABLE `role` (
 -- Dumping data for table `role`
 --
 
-LOCK TABLES `role` WRITE;
+lock TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -230,10 +228,10 @@ UNLOCK TABLES;
 -- Table structure for table `sale`
 --
 
-DROP TABLE IF EXISTS `sale`;
+drop table IF EXISTS `sale`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `sale` (
+create TABLE `sale` (
   `id` int NOT NULL AUTO_INCREMENT,
   `product_id` int NOT NULL,
   `price` double NOT NULL,
@@ -250,7 +248,7 @@ CREATE TABLE `sale` (
 -- Dumping data for table `sale`
 --
 
-LOCK TABLES `sale` WRITE;
+lock TABLES `sale` WRITE;
 /*!40000 ALTER TABLE `sale` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sale` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -259,10 +257,10 @@ UNLOCK TABLES;
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
+drop table IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
+create TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `role_id` int NOT NULL,
   `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -287,7 +285,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
+lock TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
