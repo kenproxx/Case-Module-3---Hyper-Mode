@@ -1,5 +1,5 @@
-CREATE DATABASE datshoe;
-USE datshoe;
+CREATE DATABASE playerdou;
+USE playerdou;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -77,7 +77,7 @@ UNLOCK TABLES;
 
 --
 -- Table structure for table `bill_details`
---
+
 
 DROP TABLE IF EXISTS `bill_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
