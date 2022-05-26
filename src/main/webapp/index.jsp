@@ -8,6 +8,6 @@
 
 </head>
 <body>
-<a href="/template/signup.jsp">link thu</a>
+<a href="template/signup.jsp">link thu</a>
 </body>
 </html>
