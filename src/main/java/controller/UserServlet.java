@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/users")
@@ -36,7 +37,8 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void login(HttpServletRequest request, HttpServletResponse response) {
+    private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
     }
 
     private void signUp(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
@@ -45,5 +47,6 @@ public class UserServlet extends HttpServlet {
         String email = request.getParameter("email");
         serviceUserImp.LoginUp(new User(username, password, email));
         response.sendRedirect("product");
+
     }
 }
