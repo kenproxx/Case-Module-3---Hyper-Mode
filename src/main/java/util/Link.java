@@ -13,5 +13,5 @@ public class Link {
     public static final String UPDATE_USER_FORM = "views/admin/user/editForm.jsp";
     public static final String LOGIN_CLIENT_TO_HOME = "index.jsp";
     public static final String LOGIN_CLIENT_TO_LOGIN_CLIENT = "views/user/loginUser.jsp";
-    public static final String REGISTER_CLIENT = "template/signup.jsp";
+    public static final String REGISTER_CLIENT = "view/signup.jsp";
 }

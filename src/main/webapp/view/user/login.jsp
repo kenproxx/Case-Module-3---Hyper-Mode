@@ -6,14 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 21/05/2020
-  Time: 10:16
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">--%>
 </head>
 <body>
 <main>
@@ -54,7 +47,7 @@
                 </div>
             </div>
             <div class="col-sm-6 px-0 d-none d-sm-block">
-                <img src="/resources/assets/images/login.jpg" alt="login image" class="login-img">
+                <img src="/template/img/login.jpg" alt="login image" class="login-img">
             </div>
         </div>
     </div>

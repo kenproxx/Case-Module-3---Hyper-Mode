@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">--%>
 </head>
 
 <body>
@@ -70,7 +71,7 @@
                 <c:if test='${message != null}'>
                     <span style="font-size: 20px; color: black">${message}</span>
                 </c:if>
-                <a href="/home" class="forgot-password-link">Quay về trang chủ</a>
+                <a href="index.jsp" class="forgot-password-link">Quay về trang chủ</a>
             </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
