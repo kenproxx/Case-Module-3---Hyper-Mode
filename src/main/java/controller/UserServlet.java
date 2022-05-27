@@ -26,6 +26,7 @@ public class UserServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
+
         switch (action) {
             default:
                 showIndex(request, response);
