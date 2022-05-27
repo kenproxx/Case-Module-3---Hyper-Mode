@@ -12,14 +12,33 @@ import java.util.*;
 public class ServiceUserImp implements IServiceUser{
     public void LoginUp(User user) throws SQLException {
         try(Connection connection = DBHandle.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO user (email, username, password) values (?, ?, ?)");) {
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO user (username, password, email) values (?, ?, ?)");) {
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getPassword());
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.executeUpdate();
         }
     }
-    //check database có trung nhau hay ko ;
+    //check username hoăc email trùng lặp trong user hay k;
+    public List<User> findAll() {
+        List<User> users = new ArrayList<>();
+        try (Connection connection = DBHandle.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("select username, password, email from user");) {
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                String name = rs.getString("username");
+                String password = rs.getString("password");
+                String email = rs.getString("email");
+                users.add(new User(name,password, email));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+
     @Override
     public User selectAdmin() throws SQLException {
         User admin = null;

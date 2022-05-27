@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/users")
 public class UserServlet extends HttpServlet {
@@ -21,6 +22,7 @@ public class UserServlet extends HttpServlet {
         switch (action) {
             case "signUp":
                 showSignUp(request, response);
+                break;
         }
     }
 
@@ -43,6 +45,7 @@ public class UserServlet extends HttpServlet {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
+                break;
             case"login":
                 login(request, response);
                 break;
@@ -58,8 +61,22 @@ public class UserServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        serviceUserImp.LoginUp(new User(username, password, email));
-
-        response.sendRedirect("template/signup.html");
+        List<User> users = serviceUserImp.findAll();
+        boolean isExist = false;
+        for (User user: users) {
+            if (user.getUsername().equals(username)) {
+                request.setAttribute("notify", username + " đã có người sử dung");
+                isExist = true;
+            }else {
+                if (user.getEmail().equals(email)){
+                    request.setAttribute("notify", email + " đã có người sử dung");
+                    isExist = true;
+                }
+            }
+            break;
+        }
+        if (!isExist) {
+            serviceUserImp.LoginUp(new User(username,password,email));
+        }
     }
 }
