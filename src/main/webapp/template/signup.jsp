@@ -78,66 +78,7 @@
         </div>
     </div>
 </div>
-<%--<div class="page-wrapper p-t-180 p-b-100 font-poppins">
-    <div class="wrapper wrapper--w780">
-        <div class="card card-3">
-            &lt;%&ndash;<div class="card-heading"></div>&ndash;%&gt;
-            <div class="card-body">
-                <h2 class="title">Đăng ký tài khoản</h2>
-                <form method="post">
-                    <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Tên" name="firstName">
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Họ và tên" name="lastName">
-                    </div>
-                    <div class="input-group">
-                        <div class="rs-select2 js-select-simple select--no-search">
-                            <select name="gender">
-                                <option disabled="disabled" selected="selected">Giới tính</option>
-                                <option value="1">Nam</option>
-                                <option value="0">Nữ</option>
-                            </select>
-                            <div class="select-dropdown"></div>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="date" placeholder="Ngày sinh" name="dateOfBirth">
-                        &lt;%&ndash;<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>&ndash;%&gt;
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Số điện thoại" name="phoneNumber">
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Email" name="email">
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Tên đăng nhập" name="username">
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Mật khẩu" name="password">
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Nhập lại mật khẩu" name="repassword">
-                    </div>
-                    <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Địa chỉ" name="address">
-                    </div>
-                    <div class="p-t-10">
-                        <button class="btn btn--pill btn--yellow" type="submit">Đăng ký</button>
-                    </div>
-                </form>
-                <div class="row" style="margin-top: 20px">
-                    <p>
-                        <c:if test='${message != null}'>
-                            <span style="font-size: 20px; color: whitesmoke">${message}</span>
-                        </c:if>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>--%>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
