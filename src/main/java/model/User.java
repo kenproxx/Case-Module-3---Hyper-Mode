@@ -33,6 +33,11 @@ public class User {
         this.password = password;
         this.email = email;
     }
+    public User(String username, String password, String email,String img) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
     public User(int id, int roleId, String firstName, String lastName, boolean gender, Date dateOfBirth, String phone, String email, String address, String username, String password, int status) {
         this.id = id;
         this.roleId = roleId;
