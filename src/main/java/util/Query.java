@@ -119,5 +119,5 @@ public class Query {
             "         JOIN size on product_detail.size_id = size.id\n" +
             "WHERE catalog_id = ?;";
 
-
+    public static final String SELECT_MINIPROFILE = "SELECT username,password,email,img FROM player";
 }

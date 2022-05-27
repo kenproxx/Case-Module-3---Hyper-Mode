@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,8 +24,8 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -66,17 +66,17 @@
         center: true,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-arrow-left"></i>',
             '<i class="bi bi-arrow-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             }
         }
     });
@@ -93,8 +93,9 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
-    
+
 })(jQuery);
+
 
 let curDate = new Date();
 let curDay = curDate.getUTCDate();
@@ -103,6 +104,6 @@ let curYear = curDate.getFullYear();
 let curHours = curDate.getHours();
 let curMinutes = curDate.getMinutes();
 let curSecond = curDate.getSeconds();
-document.getElementById("current-time").innerHTML = curHours + ":" + curMinutes +
+document.getElementById("time-now").innerHTML = curHours + ":" + curMinutes +
     " - " + curDay + "/" + curMonth + "/" + curYear;
 
