@@ -16,6 +16,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "RegisterServlet", urlPatterns = "/register_user")
 public class RegisterServlet extends HttpServlet {
+
     ServiceUserImp serviceUserImp = new ServiceUserImp();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
