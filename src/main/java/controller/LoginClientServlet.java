@@ -23,7 +23,7 @@ public class LoginClientServlet extends HttpServlet {
     private void showLoginClientForm(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher requestDispatcher;
         try {
-            requestDispatcher = request.getRequestDispatcher("/view/user/login.jsp");
+            requestDispatcher = request.getRequestDispatcher("/view/user/loginUser.jsp");
             requestDispatcher.forward(request, response);
         } catch (ServletException e) {
             System.out.println(Error.ERROR_006);
@@ -49,13 +49,15 @@ public class LoginClientServlet extends HttpServlet {
             if (password.equals(listClient.get(username))) {
                 requestDispatcher = request.getRequestDispatcher(Link.LOGIN_CLIENT_TO_REDIRECT_HOME);
                 requestDispatcher.forward(request, response);
+            } else {
+                request.setAttribute(Error.ERROR, Error.ERROR_004);
+                requestDispatcher = request.getRequestDispatcher(Link.LOGIN_CLIENT_TO_LOGIN_CLIENT);
+                requestDispatcher.forward(request, response);
             }
-        } catch (ServletException e) {
-            System.out.println(Error.ERROR_021);;
-        } catch (IOException e) {
-            System.out.println(Error.ERROR_022);;
+        } catch (ServletException ex) {
+            System.err.println(Error.ERROR_021);
+        } catch (IOException ex) {
+            System.err.println(Error.ERROR_022);
         }
     }
-
-
 }

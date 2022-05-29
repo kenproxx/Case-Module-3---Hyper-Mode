@@ -36,14 +36,14 @@
                             <label for="password">Mật khẩu</label>
                             <input type="password" name="password" id="password" class="form-control">
                         </div>
-                        <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Đăng nhập">
+                        <button name="login" id="login" class="btn btn-block login-btn" type="submit" value="Đăng nhập">
                         <c:if test="${requestScope.error != null}">
                             <span class="font-weight-light">${requestScope.error}</span>
                         </c:if>
                     </form>
                     <a href="#!" class="forgot-password-link">Quên mật khẩu?</a>
                     <p class="login-wrapper-footer-text">Bạn chưa có tài khoản?</p>
-                    <a href="/register_user" class="forgot-password-link">Đăng ký tài khoản</a>
+                    <a href="register_user" class="forgot-password-link">Đăng ký tài khoản</a>
                 </div>
             </div>
             <div class="col-sm-6 px-0 d-none d-sm-block">

@@ -1,5 +1,5 @@
-
-
+create database playerduo;
+use playerduo;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -21,16 +21,16 @@
 use playerdou;
 
 
-drop table IF EXISTS `attachment`;
+DROP TABLE IF EXISTS `attachment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `attachment` (
+CREATE TABLE `attachment` (
   `id` int NOT NULL,
   `product_id` int NOT NULL,
   `image_link` text NOT NULL,
   `status` int NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `attachment_product_fk` (`product_id`),
   CONSTRAINT `attachment_product_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
@@ -41,7 +41,7 @@ create TABLE `attachment` (
 -- Dumping data for table `attachment`
 --
 
-lock TABLES `attachment` WRITE;
+LOCK TABLES `attachment` WRITE;
 /*!40000 ALTER TABLE `attachment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `attachment` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -50,10 +50,10 @@ UNLOCK TABLES;
 -- Table structure for table `bill`
 --
 
-drop table IF EXISTS `bill`;
+DROP TABLE IF EXISTS `bill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `bill` (
+CREATE TABLE `bill` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `amount` double NOT NULL,
@@ -63,8 +63,8 @@ create TABLE `bill` (
   `payment` varchar(255) NOT NULL,
   `date_of_payment` datetime NOT NULL,
   `status` int NOT NULL DEFAULT '0',
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `cart_shopping_user_fk` (`user_id`),
   CONSTRAINT `cart_shopping_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
@@ -75,26 +75,26 @@ create TABLE `bill` (
 -- Dumping data for table `bill`
 --
 
-lock TABLES `bill` WRITE;
+LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `bill_details`
+--
 
-
-drop table IF EXISTS `bill_details`;
+DROP TABLE IF EXISTS `bill_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `bill_details` (
+CREATE TABLE `bill_details` (
   `id` int NOT NULL AUTO_INCREMENT,
   `bill_id` int NOT NULL,
   `product_id` int NOT NULL,
   `quantity` int NOT NULL,
   `price` double NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `cart_details_cart_shopping_fk` (`bill_id`),
   KEY `cart_details_product_fk` (`product_id`),
@@ -107,7 +107,7 @@ create TABLE `bill_details` (
 -- Dumping data for table `bill_details`
 --
 
-lock TABLES `bill_details` WRITE;
+LOCK TABLES `bill_details` WRITE;
 /*!40000 ALTER TABLE `bill_details` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bill_details` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -116,17 +116,17 @@ UNLOCK TABLES;
 -- Table structure for table `catalog`
 --
 
-drop table IF EXISTS `catalog`;
+DROP TABLE IF EXISTS `catalog`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `catalog` (
+CREATE TABLE `catalog` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `catalog_code` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `catalog_code` int DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `description` text,
   `status` int NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -135,7 +135,7 @@ create TABLE `catalog` (
 -- Dumping data for table `catalog`
 --
 
-lock TABLES `catalog` WRITE;
+LOCK TABLES `catalog` WRITE;
 /*!40000 ALTER TABLE `catalog` DISABLE KEYS */;
 /*!40000 ALTER TABLE `catalog` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -144,19 +144,18 @@ UNLOCK TABLES;
 -- Table structure for table `import`
 --
 
-drop table IF EXISTS `import`;
+DROP TABLE IF EXISTS `import`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `import` (
+CREATE TABLE `import` (
   `id` int NOT NULL AUTO_INCREMENT,
   `product_id` int NOT NULL,
-  `quantity` int NOT NULL,
+  `product_code` int NOT NULL,
   `bid` double NOT NULL,
   `import_date` datetime NOT NULL,
-  `export_date` datetime DEFAULT NULL,
   `status` int NOT NULL,
-  `created_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `created_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `import_product_fk` (`product_id`),
   CONSTRAINT `import_product_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
@@ -167,29 +166,26 @@ create TABLE `import` (
 -- Dumping data for table `import`
 --
 
-lock TABLES `import` WRITE;
+LOCK TABLES `import` WRITE;
 /*!40000 ALTER TABLE `import` DISABLE KEYS */;
 /*!40000 ALTER TABLE `import` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `catalog`
+-- Table structure for table `product`
 --
 
-drop table IF EXISTS `product`;
+DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `product` (
+CREATE TABLE `product` (
   `id` int NOT NULL AUTO_INCREMENT,
   `catalog_id` int NOT NULL,
-  `product_code` int NOT NULL,
-  `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `size` float NOT NULL,
-  `image_link` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `description` text CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `product_name` varchar(255) NOT NULL,
   `status` int NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `description` text,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `product_catalog_fk` (`catalog_id`),
   CONSTRAINT `product_catalog_fk` FOREIGN KEY (`catalog_id`) REFERENCES `catalog` (`id`)
@@ -197,10 +193,10 @@ create TABLE `product` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `catalog`
+-- Dumping data for table `product`
 --
 
-lock TABLES `product` WRITE;
+LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -209,25 +205,26 @@ UNLOCK TABLES;
 -- Table structure for table `role`
 --
 
-drop table IF EXISTS `role`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `role` (
+CREATE TABLE `role` (
   `id` int NOT NULL AUTO_INCREMENT,
   `role_name` varchar(255) NOT NULL,
   `status` int NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `role`
 --
 
-lock TABLES `role` WRITE;
+LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'User',0,'2020-05-17 16:36:01','2020-05-17 16:36:01'),(2,'Admin',1,'2020-05-17 16:36:01','2020-05-17 16:36:01'),(3,'VIP 1',2,'2020-05-17 16:36:01','2020-05-17 16:36:01');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,16 +232,16 @@ UNLOCK TABLES;
 -- Table structure for table `sale`
 --
 
-drop table IF EXISTS `sale`;
+DROP TABLE IF EXISTS `sale`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `sale` (
+CREATE TABLE `sale` (
   `id` int NOT NULL AUTO_INCREMENT,
   `product_id` int NOT NULL,
   `price` double NOT NULL,
   `status` int NOT NULL,
-  `created_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `created_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `export_product_fk` (`product_id`),
   CONSTRAINT `export_product_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
@@ -255,45 +252,102 @@ create TABLE `sale` (
 -- Dumping data for table `sale`
 --
 
-lock TABLES `sale` WRITE;
+LOCK TABLES `sale` WRITE;
 /*!40000 ALTER TABLE `sale` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sale` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `size`
+--
+
+DROP TABLE IF EXISTS `size`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `size` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `size` float NOT NULL,
+  `status` int NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `size`
+--
+
+LOCK TABLES `size` WRITE;
+/*!40000 ALTER TABLE `size` DISABLE KEYS */;
+/*!40000 ALTER TABLE `size` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `size_details`
+--
+
+DROP TABLE IF EXISTS `size_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `size_details` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `size_id` int NOT NULL,
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `size_details_product_fk` (`product_id`),
+  KEY `size_details_size_fk` (`size_id`),
+  CONSTRAINT `size_details_product_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `size_details_size_fk` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `size_details`
+--
+
+LOCK TABLES `size_details` WRITE;
+/*!40000 ALTER TABLE `size_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `size_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
 --
 
-drop table IF EXISTS `user`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-create TABLE `user` (
+CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `role_id` int NOT NULL,
-  `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
   `gender` bit(1) NOT NULL,
   `date_of_birth` date NOT NULL,
-  `phone` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(50) NOT NULL,
   `status` int NOT NULL,
-  `created_date` datetime NOT NULL,
-  `update_date` datetime NOT NULL,
+  `created_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_role_fk` (`role_id`),
   CONSTRAINT `user_role_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `user`
 --
 
-lock TABLES `user` WRITE;
+LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (6,1,'Đại Dương','Vũ',_binary '','1990-01-01','0981111111','Hà Nội','daiduong@gmail.com','daiduong','123456',1,'2020-05-17 17:28:57','2020-05-17 16:36:01'),(7,1,'Văn Đức','Nguyễn',_binary '','1990-02-02','0982222222','Hà Nội','vanduc@gmail.com','vanduc','123456',1,'2020-05-17 17:28:57','2020-05-17 16:36:01'),(8,1,'Đức Thuận','Nguyễn',_binary '','1990-03-03','0983333333','Hà Nội','ducthuan@gmail.com','ducthuan','123456',1,'2020-05-17 17:28:57','2020-05-17 16:36:01'),(9,3,'Huy','Hay Ho',_binary '','1990-04-04','0984444444','Hà Nội','huy@gmail.com','huyhayho','123456',1,'2020-05-17 17:28:57','2020-05-17 16:36:01'),(10,2,'Admin','Đức',_binary '','1990-02-02','0982222222','Hà Nội','vanduc@gmail.com','admin','123456',1,'2020-05-17 17:28:57','2020-05-17 16:36:01'),(11,1,'Huy','Tran',_binary '','2020-05-18','0858358088','Ha Noi','huytran059@gmail.com','huyfr','huyfr',1,'2020-05-18 23:28:14','2020-05-18 23:28:14'),(13,1,'test','Tran',_binary '','2020-05-19','0858358088','HN','huytran059@gmail.com','test','test',1,'2020-05-19 09:35:46','2020-05-19 09:35:46'),(14,1,'test1','test1',_binary '\0','2020-05-19','0858358088','HN','huytran059@gmail.com','test1','test',1,'2020-05-19 09:39:03','2020-05-19 09:39:03');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -306,4 +360,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-16 17:56:40
+-- Dump completed on 2020-05-19  9:41:07

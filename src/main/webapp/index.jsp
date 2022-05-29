@@ -105,7 +105,7 @@
             </div>
             <a href="template/contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="view/user/login.jsp" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i
+        <a href="view/user/loginUser.jsp" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i
                 class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>
