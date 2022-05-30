@@ -348,7 +348,7 @@
             <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
                 <!-- Block1 -->
                 <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%203.jpg"
+                    <img src="${pageContext.request.contextPath}/template/img/girl%204.jpg"
                          alt="IMG-BANNER">
 
                     <a href="/view/user/product.jsp"
