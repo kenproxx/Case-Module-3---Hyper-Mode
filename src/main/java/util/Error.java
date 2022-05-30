@@ -7,7 +7,7 @@ public class Error {
     public static final String ERROR_002 = "Khong tim thay connection";
     public static final String ERROR_003 = "Khong tim thay tai khoan admin";
     public static final String ERROR_015 = "Khong tim thay user";
-    public static final String ERROR_024 = "Khong tim thay trang registerUser.jsp";
+    public static final String ERROR_024 = "Khong tim thay trang signup.jsp";
 
     //empty
     public static final String ERROR_007 = "Danh sach trong bang user trong";
@@ -23,7 +23,7 @@ public class Error {
     public static final String ERROR_005 = "Khong xac nhan duoc tai khoan admin";
     public static final String ERROR_022 = "Khong xac nhan duoc tai khoan client";
 
-    //not tranfer
+    //not transfer
     public static final String ERROR_006 = "Khong den duoc trang admin";
     public static final String ERROR_021 = "Khong den duoc trang chu";
     public static final String ERROR_023 = "Khong den duoc trang dang nhap client";

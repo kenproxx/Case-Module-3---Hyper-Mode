@@ -1,637 +1,654 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>PlayerDuo v2.1</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="template/img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
-          rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="template/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="template/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="template/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="template/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="template/css/style.css" rel="stylesheet">
+    <title>Player Duo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <style type="text/css">
+        .vnd:after {
+            content: 'VNĐ';
+        }
+    </style>
+    <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/images/icons/favicon.png"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/vendors/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/MagnificPopup/magnific-popup.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/util.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
+    <!--===============================================================================================-->
 </head>
+<body class="animsition">
 
-<body>
-<!-- Spinner Start -->
-<div id="spinner"
-     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
-<!-- Spinner End -->
+<!-- Header -->
+<header>
+    <!-- Header desktop -->
+    <div class="container-menu-desktop">
+        <!-- Topbar -->
+        <div class="top-bar">
+            <div class="content-topbar flex-sb-m h-full container">
+                <div class="left-top-bar">
+                    Có người yêu giá chỉ từ 100.000 VNĐ
+                </div>
 
+                <div class="right-top-bar flex-w h-full">
+                    <a href="#" class="flex-c-m trans-04 p-lr-25">
+                        Help & FAQs
+                    </a>
 
-<!-- Topbar Start -->
-<div class="container-fluid bg-dark p-0">
-    <div class="row gx-0 d-none d-lg-flex">
-        <div class="col-lg-7 px-5 text-start">
-            <div class="h-100 d-inline-flex align-items-center me-4">
-                <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                <small>23, TT01, MonCity, Hà Nội</small>
-            </div>
-            <div class="h-100 d-inline-flex align-items-center">
-                <small class="far fa-clock text-primary me-2"></small>
-                <small>
-                    <div id="current-time"></div>
-                </small>
-            </div>
-        </div>
-        <div class="col-lg-5 px-5 text-end">
-            <div class="h-100 d-inline-flex align-items-center me-4">
-                <small class="fa fa-phone-alt text-primary me-2"></small>
-                <small>+84 354 586 290</small>
-            </div>
-            <div class="h-100 d-inline-flex align-items-center mx-n2">
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
-                        class="fab fa-twitter"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Topbar End -->
+                    <a href="/login" class="flex-c-m trans-04 p-lr-25">
+                        My Account
+                    </a>
 
+                    <a href="#" class="flex-c-m trans-04 p-lr-25">
+                        VN
+                    </a>
 
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-    <a href="template/index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
-        <h2 class="m-0 text-primary">PLAYERDUO</h2>
-    </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="template/index.html" class="nav-item nav-link active">Home</a>
-
-            <a href="template/service.html" class="nav-item nav-link">Service</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="template/feature.html" class="dropdown-item">Feature</a>
-                    <a href="template/quote.html" class="dropdown-item">Free Quote</a>
-                    <a href="template/team.html" class="dropdown-item">Our Team</a>
-                    <a href="template/testimonial.html" class="dropdown-item">Testimonial</a>
-                    <a href="template/404.html" class="dropdown-item">404 Page</a>
                 </div>
             </div>
-            <a href="template/contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="view/user/loginUser.jsp" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i
-                class="fa fa-arrow-right ms-3"></i></a>
+
+        <div class="wrap-menu-desktop">
+            <nav class="limiter-menu-desktop container">
+
+                <!-- Logo desktop -->
+                <a href="#" class="logo">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/logo.png" alt="IMG-LOGO">
+                </a>
+
+                <!-- Menu desktop -->
+                <div class="menu-desktop">
+                    <ul class="main-menu">
+                        <li class="active-menu">
+                            <a href="#">Trang chủ</a>
+                        </li>
+
+                        <li class="label1" data-label1="hot">
+                            <a href="/home?action=product">Sản phẩm</a>
+                        </li>
+
+                        <li>
+                            <a href="views/user/cart-detail.jsp">Giỏ hàng</a>
+                        </li>
+
+                        <li>
+                            <a href="views/user/about.jsp">Về chúng tôi</a>
+                        </li>
+
+                        <li>
+                            <a href="views/user/contact.jsp">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Icon header -->
+                <div class="wrap-icon-header flex-w flex-r-m">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                        <i class="zmdi zmdi-search"></i>
+                    </div>
+
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                         data-notify="0">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+
+                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                       data-notify="0">
+                        <i class="zmdi zmdi-favorite-outline"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </div>
-</nav>
-<!-- Navbar End -->
+
+    <!-- Header Mobile -->
+    <div class="wrap-header-mobile">
+        <!-- Logo moblie -->
+        <div class="logo-mobile">
+            <a href="#"><img src="${pageContext.request.contextPath}/resources/images/icons/logo.png"
+                             alt="IMG-LOGO"></a>
+        </div>
+
+        <!-- Icon header -->
+        <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                <i class="zmdi zmdi-search"></i>
+            </div>
+
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
+                 data-notify="0">
+                <i class="zmdi zmdi-shopping-cart"></i>
+            </div>
+
+            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+               data-notify="0">
+                <i class="zmdi zmdi-favorite-outline"></i>
+            </a>
+        </div>
+
+        <!-- Button show menu -->
+        <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+        </div>
+    </div>
 
 
-<!-- Carousel Start -->
-<div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="owl-carousel header-carousel position-relative">
-        <div class="owl-carousel-item position-relative" data-dot="<img src='img/banner1.jpg'>">
-            <img class="img-fluid" src="/template/img/banner1.jpg" alt="">
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable
-                                Energy</h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at
-                                sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                            <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+    <!-- Menu Mobile -->
+    <div class="menu-mobile">
+        <ul class="topbar-mobile">
+            <li>
+                <div class="left-top-bar">
+                    Có người yêu giá chỉ từ 100.000 VNĐ
+                </div>
+            </li>
+
+            <li>
+                <div class="right-top-bar flex-w h-full">
+                    <a href="#" class="flex-c-m p-lr-10 trans-04">
+                        Help & FAQs
+                    </a>
+
+                    <a href="#" class="flex-c-m p-lr-10 trans-04">
+                        My Account
+                    </a>
+
+                    <a href="#" class="flex-c-m p-lr-10 trans-04">
+                        VN
+                    </a>
+
+                </div>
+            </li>
+        </ul>
+
+        <ul class="main-menu-m">
+            <li>
+                <a href="#">Trang chủ</a>
+            </li>
+
+            <li >
+                <a href="/home?action=product" class="label1 rs1" data-label1="hot">Sản phẩm</a>
+                <span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+            </li>
+
+            <li>
+                <a href="/addtoCart?action=" >Giỏ hàng</a>
+            </li>
+
+            <li>
+                <a href="views/user/about.jsp">Về chúng tôi</a>
+            </li>
+
+            <li>
+                <a href="views/user/contact.jsp">Liên hệ</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal Search -->
+    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+        <div class="container-search-header">
+            <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                <img src="${pageContext.request.contextPath}/resources/images/icons/icon-close2.png" alt="CLOSE">
+            </button>
+
+            <form class="wrap-search-header flex-w p-l-15">
+                <button class="flex-c-m trans-04" onclick="">
+                    <i class="zmdi zmdi-search"></i>
+                </button>
+                <input class="plh3" type="text" name="search" placeholder="Search..." id="search">
+            </form>
+        </div>
+    </div>
+</header>
+
+<!-- Cart -->
+<div class="wrap-header-cart js-panel-cart">
+    <div class="s-full js-hide-cart"></div>
+
+    <div class="header-cart flex-col-l p-l-65 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">
+					GIỎ HÀNG CỦA BẠN
+				</span>
+
+            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                <i class="zmdi zmdi-close"></i>
+            </div>
+        </div>
+
+        <div class="header-cart-content flex-w js-pscroll">
+
+            <div class="w-full">
+                <div class="header-cart-total w-full p-tb-40">
+                    Tổng cộng:
+                </div>
+
+                <div class="header-cart-buttons flex-w w-full">
+                    <a href="shoping-cart.html"
+                       class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                        Xem giỏ hàng
+                    </a>
+
+                    <a href="shoping-cart.html"
+                       class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                        Thanh toán
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slider -->
+<section class="section-slide">
+    <div class="wrap-slick1">
+        <div class="slick1">
+            <div class="item-slick1"
+                 style="background-image: url(${pageContext.request.contextPath}/template/img/lebong.jpg);">
+                <div class="container h-full">
+                    <div class="flex-col-l-m h-full p-t-100 p-b-30 respond5">
+                        <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+								<span class="ltext-101 cl2 respond2">
+									BỘ SƯU TẬP CHỊ EM
+								</span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-slick1"
+                 style="background-image: url(${pageContext.request.contextPath}/template/img/amee.jpg);">
+                <div class="container h-full">
+                    <div class="flex-col-l-m h-full p-t-100 p-b-30 respond5">
+                        <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
+								<span class="ltext-101 cl2 respond2">
+									GÁI 2022
+								</span>
+                        </div>
+
+                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+                            <a href="/view/user/product.jsp"
+                               class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                                Xem ngay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-slick1"
+                 style="background-image: url(${pageContext.request.contextPath}/resources/images/slide-lisa.jpg);">
+                <div class="container h-full">
+                    <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
+                        <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
+								<span class="ltext-101 cl2 respon2">
+									BỘ SƯU TẬP HOT
+								</span>
+                        </div>
+                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+                            <a href="/view/user/product.jsp"
+                               class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                                Xem ngay
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="owl-carousel-item position-relative" data-dot="<img src='img/banner2.jpg'>">
-            <img class="img-fluid" src="/template/img/banner2.jpg" alt="">
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable
-                                Energy</h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at
-                                sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                            <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="owl-carousel-item position-relative" data-dot="<img src='img/banner4.jpg'>">
-            <img class="img-fluid" src="/template/img/banner4.jpg" alt="">
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable
-                                Energy</h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at
-                                sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                            <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
-<!-- Carousel End -->
+</section>
 
 
-<!-- Feature Start -->
-<div class="container-xxl py-5">
+<!-- Banner -->
+<div class="sec-banner bg0 p-t-80 p-b-50">
     <div class="container">
-        <div class="row g-5">
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                <div class="d-flex align-items-center mb-4">
-                    <div class="btn-lg-square bg-primary rounded-circle me-3">
-                        <i class="fa fa-users text-white"></i>
-                    </div>
-                    <h1 class="mb-0" data-toggle="counter-up">3453</h1>
+        <div class="row">
+            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
+                <!-- Block1 -->
+                <div class="block1 wrap-pic-w">
+                    <img src="${pageContext.request.contextPath}/template/img/girl%203.jpg"
+                         alt="IMG-BANNER">
+
+                    <a href="/view/user/product.jsp"
+                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                        <div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									HOT PLAYER
+								</span>
+
+                            <span class="block1-info stext-102 trans-04">
+									Trending
+								</span>
+                        </div>
+
+                        <div class="block1-txt-child2 p-b-4 trans-05">
+                            <div class="block1-link stext-101 cl0 trans-09">
+                                Xem ngay
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <h5 class="mb-3">Happy Customers</h5>
-                <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
             </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                <div class="d-flex align-items-center mb-4">
-                    <div class="btn-lg-square bg-primary rounded-circle me-3">
-                        <i class="fa fa-check text-white"></i>
-                    </div>
-                    <h1 class="mb-0" data-toggle="counter-up">4234</h1>
+
+            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
+                <!-- Block1 -->
+                <div class="block1 wrap-pic-w">
+                    <img src="${pageContext.request.contextPath}/template/img/girl%201.jpg"
+                         alt="IMG-BANNER">
+
+                    <a href="/view/user/product.jsp"
+                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                        <div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									VIP PLAYER
+								</span>
+
+                            <span class="block1-info stext-102 trans-04">
+									Summer 2022
+								</span>
+                        </div>
+
+                        <div class="block1-txt-child2 p-b-4 trans-05">
+                            <div class="block1-link stext-101 cl0 trans-09">
+                                Xem ngay
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <h5 class="mb-3">Project Done</h5>
-                <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
             </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                <div class="d-flex align-items-center mb-4">
-                    <div class="btn-lg-square bg-primary rounded-circle me-3">
-                        <i class="fa fa-award text-white"></i>
-                    </div>
-                    <h1 class="mb-0" data-toggle="counter-up">3123</h1>
+
+            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
+                <!-- Block1 -->
+                <div class="block1 wrap-pic-w">
+                    <img src="${pageContext.request.contextPath}/template/img/girl%202.jpg" alt="IMG-BANNER">
+
+                    <a href="/view/user/product.jsp"
+                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                        <div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									MỚI NỔI
+								</span>
+
+                            <span class="block1-info stext-102 trans-04">
+									Summer 2022
+								</span>
+                        </div>
+
+                        <div class="block1-txt-child2 p-b-4 trans-05">
+                            <div class="block1-link stext-101 cl0 trans-09">
+                                Xem ngay
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <h5 class="mb-3">Awards Win</h5>
-                <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
-            </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                <div class="d-flex align-items-center mb-4">
-                    <div class="btn-lg-square bg-primary rounded-circle me-3">
-                        <i class="fa fa-users-cog text-white"></i>
-                    </div>
-                    <h1 class="mb-0" data-toggle="counter-up">1831</h1>
-                </div>
-                <h5 class="mb-3">Expert Workers</h5>
-                <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- Service Start -->
-<div class="container-xxl py-5">
+<!-- Footer -->
+<footer class="bg3 p-t-75 p-b-32">
     <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h1 class="mb-4">VIP PLAYER</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/ngoctrinh.jpg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-solar-panel fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Ngọc Trinh</h4>
-                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                        <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/quynhalee.jpg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-wind fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Quỳnh Alee</h4>
-                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                        <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/amee.jpg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-lightbulb fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Amee</h4>
-                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                        <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/lebong.jpg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-solar-panel fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Lê Bống</h4>
-                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                        <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/gamkami.jpg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-wind fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Gấm Kami</h4>
-                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                        <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-6.jpg" alt="">
-                    <div class="position-relative p-4 pt-0">
-                        <div class="service-icon">
-                            <i class="fa fa-lightbulb fa-3x"></i>
-                        </div>
-                        <h4 class="mb-3">Hydropower Plants</h4>
-                        <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                        <a class="small fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Service End -->
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Hỗ trợ
+                </h4>
 
+                <ul>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Trợ giúp & Dịch vụ khách hàng
+                        </a>
+                    </li>
 
-<!-- Projects Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary">Our Projects</h6>
-            <h1 class="mb-4">Player Other</h1>
-        </div>
-        <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="col-12 text-center">
-                <ul class="list-inline mb-5" id="portfolio-flters">
-                    <li class="mx-2 active" data-filter="*">All</li>
-                    <li class="mx-2" data-filter=".first">Sort By Name</li>
-                    <li class="mx-2" data-filter=".second">Sort By Price</li>
-                    <li class="mx-2" data-filter=".third">Hydropower Plants</li>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Trả lại hàng & Hoàn tiền
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Giao hàng
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            FAQs
+                        </a>
+                    </li>
                 </ul>
             </div>
+
+            <div class="col-sm-12 col-lg-4 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Liên hệ
+                </h4>
+
+                <p class="stext-107 cl7 size-201">
+                    Bạn có câu hỏi dành cho chúng tôi? Hãy gửi nó đến cửa hàng của chúng tôi tại số 23 lô TT01 khu đô
+                    thị Mon City
+                    hoặc gọi chúng tôi qua số điện thoại: (+84)988.888.888.
+                </p>
+
+                <div class="p-t-27">
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-pinterest-p"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Hộp thư
+                </h4>
+
+                <form>
+                    <div class="wrap-input1 w-full p-b-4">
+                        <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email"
+                               placeholder="email@example.com">
+                        <div class="focus-input1 trans-04"></div>
+                    </div>
+
+                    <div class="p-t-18">
+                        <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-6.jpg" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="template/img/img-600x400-6.jpg"
-                           data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i
-                                class="fa fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Solar Panels</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                </div>
+
+        <div class="p-t-40">
+            <div class="flex-c-m flex-w p-b-18">
+                <a href="#" class="m-all-1">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-01.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-02.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-03.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-04.png" alt="ICON-PAY">
+                </a>
+
+                <a href="#" class="m-all-1">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-05.png" alt="ICON-PAY">
+                </a>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-5.jpg" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="template/img/img-600x400-5.jpg"
-                           data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i
-                                class="fa fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Wind Turbines</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-4.jpg" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="template/img/img-600x400-4.jpg"
-                           data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i
-                                class="fa fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Hydropower Plants</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-3.jpg" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="template/img/img-600x400-3.jpg"
-                           data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i
-                                class="fa fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Solar Panels</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-2.jpg" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="template/img/img-600x400-2.jpg"
-                           data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i
-                                class="fa fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Wind Turbines</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="/template/img/img-600x400-1.jpg" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="template/img/img-600x400-1.jpg"
-                           data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i
-                                class="fa fa-link"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Hydropower Plants</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                </div>
-            </div>
+
+            <p class="stext-107 cl6 txt-center">
+                <!-- Link back to Color lib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                    href="https://codegym.vn/" target="_blank">PlayerDuo Team</a>
+                <!-- Link back to Color lib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </p>
         </div>
     </div>
+</footer>
+
+
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
 </div>
-<!-- Projects End -->
 
 
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/bootstrap/js/popper.js"></script>
+<script src="${pageContext.request.contextPath}/resources/vendors/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/daterangepicker/moment.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/vendors/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/slick/slick.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/slick-custom.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/parallax100/parallax100.js"></script>
+<script>
+    $('.parallax100').parallax100();
+</script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<script>
+    $('.gallery-lb').each(function () { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
+            gallery: {
+                enabled: true
+            },
+            mainClass: 'mfp-fade'
+        });
+    });
+</script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/sweetalert/sweetalert.min.js"></script>
+<script>
+    $('.js-addwish-b2').on('click', function (e) {
+        e.preventDefault();
+    });
 
+    $('.js-addwish-b2').each(function () {
+        var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+        $(this).on('click', function () {
+            swal(nameProduct, "đã thêm vào Danh sách yêu thích !", "success");
 
+            $(this).addClass('js-addedwish-b2');
+            $(this).off('click');
+        });
+    });
 
-<!-- Team Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h6 class="text-primary">Team Member</h6>
-            <h1 class="mb-4">Experienced Team Members</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item rounded overflow-hidden">
-                    <div class="d-flex">
-                        <img class="img-fluid w-75" src="/template/img/team-dat.jpg" alt="">
-                        <div class="team-social w-25">
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h5>Đạt z</h5>
-                        <span>Database</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item rounded overflow-hidden">
-                    <div class="d-flex">
-                        <img class="img-fluid w-75" src="/template/img/team-kien.jpg" alt="">
-                        <div class="team-social w-25">
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h5>Ken Nguyễn</h5>
-                        <span>Front End</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item rounded overflow-hidden">
-                    <div class="d-flex">
-                        <img class="img-fluid w-75" src="/template/img/girl%205.jpg" alt="">
-                        <div class="team-social w-25">
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href=""><i
-                                    class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h5>Master Thiên</h5>
-                        <span>Back End</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Team End -->
+    $('.js-addwish-detail').each(function () {
+        var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
+        $(this).on('click', function () {
+            swal(nameProduct, "đã thêm vào Danh sách yêu thích !", "success");
 
-<!-- Testimonial Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h1 class="mb-4">What Our Clients Say!</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="/template/img/girl%2015.jpg">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p>Web thật tuyệt, nhờ nó mà tôi đi lên từ 2 bàn tay trắng và xây dựng được một khoản nợ khổng lồ.</p>
-                    <h5 class="mb-1">Client Name</h5>
-                    <span class="fst-italic">Profession</span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="/template/img/testimonial-2.jpg">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut
-                        diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                        clita.</p>
-                    <h5 class="mb-1">Client Name</h5>
-                    <span class="fst-italic">Profession</span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="/template/img/testimonial-3.jpg">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut
-                        diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                        clita.</p>
-                    <h5 class="mb-1">Client Name</h5>
-                    <span class="fst-italic">Profession</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
+            $(this).addClass('js-addedwish-detail');
+            $(this).off('click');
+        });
+    });
 
+    /*---------------------------------------------*/
 
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Address</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>23, TT01, MonCity, Hà Nội</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+84 354 586 290</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>joskientn@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Quick Links</h5>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
+    $('.js-addcart-detail').each(function () {
+        var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+        $(this).on('click', function () {
+            swal(nameProduct, "đã thêm vào Giỏ hàng !", "success");
+        });
+    });
 
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Update the latest information from us</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; No copyright
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                    <br>Editor: <a href="https://themewagon.com" target="_blank">Kenproxx</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+</script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script>
+    $('.js-pscroll').each(function () {
+        $(this).css('position', 'relative');
+        $(this).css('overflow', 'hidden');
+        var ps = new PerfectScrollbar(this, {
+            wheelSpeed: 1,
+            scrollingThreshold: 1000,
+            wheelPropagation: false,
+        });
 
+        $(window).on('resize', function () {
+            ps.update();
+        })
+    });
+</script>
+<!--===============================================================================================-->
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/front-end-views.js"></script>
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/template/lib/wow/wow.min.js"></script>
-<script src="/template/lib/easing/easing.min.js"></script>
-<script src="/template/lib/waypoints/waypoints.min.js"></script>
-<script src="/template/lib/counterup/counterup.min.js"></script>
-<script src="/template/lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="/template/lib/isotope/isotope.pkgd.min.js"></script>
-<script src="/template/lib/lightbox/js/lightbox.min.js"></script>
-
-<!-- Template Javascript -->
-<script src="/template/js/main.js"></script>
 </body>
-
 </html>

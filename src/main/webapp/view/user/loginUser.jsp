@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">
 </head>
 <body>
 <main>
@@ -43,7 +43,7 @@
                     </form>
                     <a href="#!" class="forgot-password-link">Quên mật khẩu?</a>
                     <p class="login-wrapper-footer-text">Bạn chưa có tài khoản?</p>
-                    <a href="register_user" class="forgot-password-link">Đăng ký tài khoản</a>
+                    <a href="/view/user/signup.jsp" class="forgot-password-link">Đăng ký tài khoản</a>
                 </div>
             </div>
             <div class="col-sm-6 px-0 d-none d-sm-block">
