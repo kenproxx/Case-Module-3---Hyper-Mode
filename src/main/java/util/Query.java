@@ -7,7 +7,6 @@ public class Query {
     public static final String SELECT_CLIENT_WITH_ROLE = "select username, password from user where role_id <> 2 and status <> -1 and status <> 0;";
     public static final String CREATE_USER_WITH_PARAMETERS = "insert into user (role_id, first_name, last_name, gender, date_of_birth, phone, address, email, username, password, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     public static final String UPDATE_USER_WITH_ID = "update user set role_id = ?, first_name = ?, last_name = ?, gender = ?, date_of_birth = ?, phone = ?, address = ?, email = ?, username = ?, password = ?, status = ? where id = ?;";
-    //    public static final String DELETE_USER_WITH_ID = "delete from user where id = ?;";
     public static final String DELETE_USER_WITH_ID = "update user set status = -1 where id = ?;";
 
     public static final String SELECT_ALL_PRODUCT = "SELECT *\n" +
@@ -120,5 +119,5 @@ public class Query {
             "         JOIN size on product_detail.size_id = size.id\n" +
             "WHERE catalog_id = ?;";
 
-
+    public static final String SELECT_MINIPROFILE = "SELECT username,password,email,img FROM player";
 }
