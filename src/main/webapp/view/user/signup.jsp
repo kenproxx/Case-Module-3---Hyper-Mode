@@ -23,48 +23,48 @@
                 <h1 class="login-title">Đăng ký tài khoản</h1>
                 <form method="post" action="/register_user" name="userForm" onsubmit="return validate();">
                     <div class="form-group">
-                        <input type="text" name="firstName" class="form-control" placeholder="Tên">
-                        <div id="firstNameError"></div>
+                        <input type="text" name="firstName" class="form-control" placeholder="Tên" required>
+<%--                        <div id="firstNameError"></div>--%>
                     </div>
                     <div class="form-group mb-4">
-                        <input type="text" name="lastName"  class="form-control" placeholder="Họ và tên">
-                        <div id="lastNameError"></div>
+                        <input type="text" name="lastName"  class="form-control" placeholder="Họ và tên" required>
+<%--                        <div id="lastNameError"></div>--%>
                     </div>
                     <div class="form-group">
-                        <select name="gender" class="form-control">
-                            <option disabled="disabled" selected="selected" value="-1">Giới tính</option>
+                        <select name="gender" class="form-control" required>
+                            <option disabled="disabled" selected="selected"  value="-1">Giới tính</option>
                             <option value="1">Nam</option>
                             <option value="0">Nữ</option>
                         </select>
-                        <div id="genderError"></div>
+<%--                        <div id="genderError"></div>--%>
                     </div>
                     <div class="form-group mb-4">
-                        <input type="date" class="form-control"  placeholder="Ngày sinh" name="dateOfBirth">
-                        <div id="dateOfBirthError"></div>
+                        <input type="date" class="form-control" required placeholder="Ngày sinh" name="dateOfBirth">
+<%--                        <div id="dateOfBirthError"></div>--%>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Số điện thoại" name="phoneNumber" class="form-control">
-                        <div id="phoneNumberError"></div>
+                        <input type="text" placeholder="Số điện thoại" required name="phoneNumber" class="form-control">
+<%--                        <div id="phoneNumberError"></div>--%>
                     </div>
                     <div class="form-group mb-4">
-                        <input type="text" placeholder="Email" name="email" class="form-control">
-                        <div id="emailError"></div>
+                        <input type="email" placeholder="Email" name="email" class="form-control" required>
+<%--                        <div id="emailError"></div>--%>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Tên đăng nhập" name="username" class="form-control">
-                        <div id="usernameError"></div>
+                        <input type="text" placeholder="Tên đăng nhập" name="username" class="form-control" required>
+<%--                        <div id="usernameError"></div>--%>
                     </div>
                     <div class="form-group mb-4">
-                        <input type="password" placeholder="Mật khẩu" name="password" class="form-control">
-                        <div id="passwordError"></div>
+                        <input type="password" placeholder="Mật khẩu" name="password" class="form-control" required>
+<%--                        <div id="passwordError"></div>--%>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Nhập lại mật khẩu" name="repassword" class="form-control">
-                        <div id="repasswordError"></div>
+                        <input type="password" placeholder="Nhập lại mật khẩu" required name="repassword" class="form-control">
+<%--                        <div id="repasswordError"></div>--%>
                     </div>
                     <div class="form-group mb-4">
-                        <input type="text" placeholder="Địa chỉ" name="address" class="form-control">
-                        <div id="addressError"></div>
+                        <input type="text" placeholder="Địa chỉ" required name="address" class="form-control">
+<%--                        <div id="addressError"></div>--%>
                     </div>
                     <button class="btn btn-block login-btn" type="submit">Đăng ký</button>
                 </form>
