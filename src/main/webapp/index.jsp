@@ -52,6 +52,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/util.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
     <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -344,12 +345,64 @@
 <!-- Banner -->
 <div class="sec-banner bg0 p-t-80 p-b-50">
     <div class="container">
-        <div class="row">
+        <div class="row" >
             <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
                 <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%203.jpg"
-                         alt="IMG-BANNER">
+                <div class="block1 wrap-pic-w ">
+                    <img  src="${pageContext.request.contextPath}/template/img/girl%202.jpg"
+                         alt="IMG-BANNER" >
+
+                    <a href="/view/user/product.jsp"
+                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                        <div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									HOT PLAYER
+								</span>
+
+                            <span class="block1-info stext-102 trans-04">
+									Trending
+								</span>
+                        </div>
+
+                        <div class="block1-txt-child2 p-b-4 trans-05">
+                            <div class="block1-link stext-101 cl0 trans-09">
+                                Xem ngay
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
+                <!-- Block1 -->
+                <div class="block1 wrap-pic-w ">
+                    <img  src="${pageContext.request.contextPath}/template/img/girl%201.jpg"
+                         alt="IMG-BANNER" >
+
+                    <a href="/view/user/product.jsp"
+                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                        <div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">
+									HOT PLAYER
+								</span>
+
+                            <span class="block1-info stext-102 trans-04">
+									Trending
+								</span>
+                        </div>
+
+                        <div class="block1-txt-child2 p-b-4 trans-05">
+                            <div class="block1-link stext-101 cl0 trans-09">
+                                Xem ngay
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
+                <!-- Block1 -->
+                <div class="block1 wrap-pic-w ">
+                    <img  src="${pageContext.request.contextPath}/template/img/girl%204.jpg"
+                         alt="IMG-BANNER" >
 
                     <a href="/view/user/product.jsp"
                        class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
@@ -372,58 +425,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%201.jpg"
-                         alt="IMG-BANNER">
 
-                    <a href="/view/user/product.jsp"
-                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									VIP PLAYER
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Summer 2022
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Xem ngay
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%202.jpg" alt="IMG-BANNER">
-
-                    <a href="/view/user/product.jsp"
-                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									MỚI NỔI
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Summer 2022
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Xem ngay
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
