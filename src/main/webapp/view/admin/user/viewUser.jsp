@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Stellar Admin</title>
+    <title>Player Admin</title>
     <link rel="stylesheet" href="resources/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="resources/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
@@ -27,7 +27,7 @@
             <a class="navbar-brand brand-logo-mini" href="/dashboard"><img src="${pageContext.request.contextPath}/resources/images/logo-mini.svg" alt="logo"/></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-            <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Duong shoe's dashboard!</h5>
+            <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Player Duo dashboard!</h5>
             <ul class="navbar-nav navbar-nav-right ml-auto">
                 <form class="search-form d-none d-md-block" action="#">
                     <i class="icon-magnifier"></i><input type="search" class="form-control" placeholder="Tìm kiếm" title="Search here">
@@ -93,7 +93,7 @@
                         <i class="icon-screen-desktop menu-icon"></i>
                     </a>
                 </li>
-                <li class="nav-item nav-category"><span class="nav-link">Cửa hàng</span></li>
+                <li class="nav-item nav-category"><span class="nav-link"></span></li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
                        aria-controls="product">

@@ -26,13 +26,13 @@
     <div class="container-scroller">
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-                <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Duong shoe's dashboard!</h5>
+                <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Player Duo dashboard!</h5>
                 <ul class="navbar-nav navbar-nav-right ml-auto">
                     <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                            aria-expanded="false">
                             <img class="img-xs rounded-circle ml-2"
-                                 src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
                                  alt="Profile image">
                             <span class="font-weight-normal"> Admin </span></a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -67,12 +67,12 @@
                         <a href="#" class="nav-link">
                             <div class="profile-image">
                                 <img class="img-xs rounded-circle"
-                                     src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                     src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
                                      alt="profile image">
                                 <div class="dot-indicator bg-success"></div>
                             </div>
                             <div class="text-wrapper">
-                                <p class="profile-name">Allen Moreno</p>
+                                <p class="profile-name">Nguyễn Trung Kiên</p>
                                 <p class="designation">Administrator</p>
                             </div>
                             <div class="icon-container">
@@ -90,19 +90,7 @@
                             <i class="icon-screen-desktop menu-icon"></i>
                         </a>
                     </li>
-                    <li class="nav-item nav-category"><span class="nav-link">Cửa hàng</span></li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
-                           aria-controls="product">
-                            <span class="menu-title">Quản lý sản phẩm</span>
-                            <i class="icon-basket-loaded menu-icon"></i>
-                        </a>
-                        <div class="collapse" id="product">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/product?action=">Danh sách sản phẩm</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li class="nav-item nav-category"><span class="nav-link">Player</span></li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#bill" aria-expanded="false"
                            aria-controls="bill">
@@ -439,9 +427,9 @@
                 </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a
-                            href="https://www.bootstrapdash.com/" target="_blank">Bootstrap Dash</a>. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 <a
+                            href="https://www.bootstrapdash.com/" target="_blank"></a>. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with  <i
                                 class="icon-heart text-danger"></i></span>
                     </div>
                 </footer>

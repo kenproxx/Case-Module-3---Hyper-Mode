@@ -54,7 +54,7 @@
         <div class="top-bar">
             <div class="content-topbar flex-sb-m h-full container">
                 <div class="left-top-bar">
-                    Miễn phí vận chuyển cho đơn hàng từ 5.000.000 VNĐ
+                    Có người yêu giá chỉ từ 100.000 VNĐ
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
@@ -79,7 +79,7 @@
 
                 <!-- Logo desktop -->
                 <a href="/home?action=" class="logo">
-                    <img src="${pageContext.request.contextPath}/resources/images/icons/logo-01.png" alt="IMG-LOGO">
+                    <img src="${pageContext.request.contextPath}/resources/images/icons/logo.png" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
@@ -91,18 +91,10 @@
 
                         <li class="label1 active-menu" data-label1="hot" >
                             <a href="#">Sản phẩm</a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">Adidas</a></li>
-                                <li><a href="home-02.html">Nike</a></li>
-                                <li><a href="home-03.html">Gucci</a></li>
-                                <li><a href="home-03.html">Puma</a></li>
-                                <li><a href="home-03.html">Biti's</a></li>
-                                <li><a href="home-03.html">Vans</a></li>
-                            </ul>
                         </li>
 
                         <li >
-                            <a href="/addtoCart?action=">Giỏ hàng</a>
+                            <a href="/addToCart?action=">Giỏ hàng</a>
                         </li>
 
                         <li>
@@ -139,7 +131,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="/home?action="><img src="${pageContext.request.contextPath}/resources/images/icons/logo-01.png"
+            <a href="/home?action="><img src="${pageContext.request.contextPath}/resources/images/icons/logo.png"
                                          alt="IMG-LOGO"></a>
         </div>
 
@@ -174,7 +166,7 @@
         <ul class="topbar-mobile">
             <li>
                 <div class="left-top-bar">
-                    Miễn phí vận chuyển cho đơn hàng từ 5.000.000 VNĐ
+                    Có người yêu giá chỉ từ 100.000 VNĐ
                 </div>
             </li>
 
@@ -203,21 +195,13 @@
 
             <li class="active-menu">
                 <a href="#" class="label1 rs1" data-label1="hot">Sản phẩm</a>
-                <ul class="sub-menu-m">
-                    <li><a href="index.html">Adidas</a></li>
-                    <li><a href="home-02.html">Nike</a></li>
-                    <li><a href="home-03.html">Gucci</a></li>
-                    <li><a href="home-03.html">Puma</a></li>
-                    <li><a href="home-03.html">Biti's</a></li>
-                    <li><a href="home-03.html">Vans</a></li>
-                </ul>
                 <span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</span>
             </li>
 
             <li>
-                <a href="/addtoCart?action=" >Giỏ hàng</a>
+                <a href="/addToCart?action=" >Giỏ hàng</a>
             </li>
 
             <li>
@@ -286,255 +270,13 @@
 </div>
 
 
-<!-- Product -->
-<div class="bg0 m-t-23 p-b-140" style="margin-top: 80px">
-    <div class="container">
-        <div class="flex-w flex-sb-m p-b-52">
-            <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                    TẤT CẢ SẢN PHẨM
-                </button>
-
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".1">
-                    ADIDAS
-                </button>
-
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".2">
-                    NIKE
-                </button>
-
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".3">
-                    GUCCI
-                </button>
-
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".4">
-                    PUMA
-                </button>
-
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".5">
-                    BITI'S
-                </button>
-
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".6">
-                    VANS
-                </button>
-            </div>
-
-            <div class="flex-w flex-c-m m-tb-10">
-                <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-                    <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-                    <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                    Filter
-                </div>
-
-                <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-                    <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-                    <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                    Search
-                </div>
-            </div>
-
-            <!-- Search product -->
-            <div class="dis-none panel-search w-full p-t-10 p-b-15">
-                <div class="bor8 dis-flex p-l-15">
-                    <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-                        <i class="zmdi zmdi-search"></i>
-                    </button>
-
-                    <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
-                </div>
-            </div>
-
-            <!-- Filter -->
-            <div class="dis-none panel-filter w-full p-t-10">
-                <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-                    <div class="filter-col1 p-r-15 p-b-27">
-                        <div class="mtext-102 cl2 p-b-15">
-                            Sort By
-                        </div>
-
-                        <ul>
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Default
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Popularity
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Average rating
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                    Newness
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Price: Low to High
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Price: High to Low
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="filter-col2 p-r-15 p-b-27">
-                        <div class="mtext-102 cl2 p-b-15">
-                            Price
-                        </div>
-
-                        <ul>
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                    All
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $0.00 - $50.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $50.00 - $100.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $100.00 - $150.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $150.00 - $200.00
-                                </a>
-                            </li>
-
-                            <li class="p-b-6">
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    $200.00+
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row isotope-grid">
-            <c:forEach var="item" items="${itemList}">
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${item.getProduct().getCatalogID()}">
-                    <!-- Block2 -->
-                    <div class="block2">
-                        <div class="block2-pic hov-img0">
-                            <img src="${item.getProduct().getImages()[0]}" width="315" height="350" alt="IMG-PRODUCT">
-                            <a href="/home?action=view-detail&id=${item.getProduct().getProductID()}"
-                               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-                                Xem nhanh
-                            </a>
-                        </div>
-
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                <a href="/home?action=view-detail&id=${item.getProduct().getProductID()}"
-                                   class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    <c:out value="${item.getProduct().getProductName()}"/>
-                                </a>
-
-                                <span class="stext-105 cl3 vnd">
-
-                                    <c:set var="price" value="${item.getPrice()}"/>
-                                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${price}"/>
-
-                                </span>
-                            </div>
-
-                            <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img class="icon-heart1 dis-block trans-04"
-                                         src="${pageContext.request.contextPath}/resources/images/icons/icon-heart-01.png"
-                                         alt="ICON" onclick="like()">
-                                    <img class="icon-heart2 dis-block trans-04 ab-t-l"
-                                         src="${pageContext.request.contextPath}/resources/images/icons/icon-heart-02.png"
-                                         alt="ICON">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-</div>
-
-
 <!-- Footer -->
 <footer class="bg3 p-t-75 p-b-32">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0 p-b-30">
-                    Sản phẩm
-                </h4>
 
-                <ul>
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Adidas
-                        </a>
-                    </li>
 
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Nike
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Gucci
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Puma
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Biti's
-                        </a>
-                    </li>
-
-                    <li class="p-b-10">
-                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                            Vans
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-sm-6 col-lg-3 p-b-50">
+            <div class="col-sm-12 col-lg-4 p-b-50">
                 <h4 class="stext-301 cl0 p-b-30">
                     Hỗ trợ
                 </h4>
@@ -566,13 +308,13 @@
                 </ul>
             </div>
 
-            <div class="col-sm-6 col-lg-3 p-b-50">
+            <div class="col-sm-12 col-lg-4 p-b-50">
                 <h4 class="stext-301 cl0 p-b-30">
                     Liên hệ
                 </h4>
 
                 <p class="stext-107 cl7 size-201">
-                    Bạn có câu hỏi dành cho chúng tôi? Hãy gửi nó đến cửa hàng của chúng tôi tại số 15 lô TT04 khu đô
+                    Bạn có câu hỏi dành cho chúng tôi? Hãy gửi nó đến cửa hàng của chúng tôi tại số 23 lô TT01 khu đô
                     thị Mon City
                     hoặc gọi chúng tôi qua số điện thoại: (+84)988.888.888
                 </p>
@@ -592,7 +334,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-6 col-lg-3 p-b-50">
+            <div class="col-sm-12 col-lg-4 p-b-50">
                 <h4 class="stext-301 cl0 p-b-30">
                     Hộp thư
                 </h4>
@@ -640,7 +382,7 @@
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
                 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                    href="https://codegym.vn/" target="_blank">duongShoeTeam</a>
+                    href="https://codegym.vn/" target="_blank">Player Duo Team</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
             </p>

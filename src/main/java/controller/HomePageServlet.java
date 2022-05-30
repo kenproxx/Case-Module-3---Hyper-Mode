@@ -49,19 +49,19 @@ public class HomePageServlet extends HttpServlet {
     }
 
     private void showContactPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/user/contact.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/contact.jsp");
         dispatcher.forward(request, response);
     }
 
     private void showAboutPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/user/about.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/about.jsp");
         dispatcher.forward(request, response);
     }
 
     private void showProductPage(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         List<Item> itemList = productService.getProductForHomePage();
         request.setAttribute("itemList", itemList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/user/product.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/product.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -82,7 +82,7 @@ public class HomePageServlet extends HttpServlet {
         DecimalFormat formatter = new DecimalFormat("###,###,###.##");
         String priceFormatter = formatter.format(price);
         request.setAttribute("price", priceFormatter);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/user/product-detail.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/product-detail.jsp");
         dispatcher.forward(request, response);
     }
 }
