@@ -179,14 +179,21 @@
                                                     <select class="form-control" name="gender">
                                                         <c:set var="gender" value="${user.getGender()}"/>
                                                         <c:choose>
-                                                            <c:when test="${gender}">
-                                                                <option name="male" value="1" selected disabled>Nam</option>
-                                                                <option name="female" value="0" disabled>Nữ</option>
+                                                            <c:when test="${role == 2}">
+                                                                <option name="user" value="1" disabled>Người dùng</option>
+                                                                <option name="admin" value="2" selected disabled>Admin</option>
+                                                                <option name="vipUser" value="3" disabled>Người dùng VIP 1</option>
                                                             </c:when>
-                                                            <c:otherwise>
-                                                                <option name="male" value="1" disabled>Nam</option>
-                                                                <option name="female" value="0" selected disabled>Nữ</option>
-                                                            </c:otherwise>
+                                                            <c:when test="${role == 1}">
+                                                                <option name="user" value="1" selected disabled>Người dùng</option>
+                                                                <option name="admin" value="2" disabled>Admin</option>
+                                                                <option name="vipUser" value="3" disabled>Người dùng VIP 1</option>
+                                                            </c:when>
+                                                            <c:when test="${role == 3}">
+                                                                <option name="user" value="1" disabled>Người dùng</option>
+                                                                <option name="admin" value="2" disabled>Admin</option>
+                                                                <option name="vipUser" value="3" selected disabled>Người dùng VIP 1</option>
+                                                            </c:when>
                                                         </c:choose>
                                                     </select>
                                                 </div>

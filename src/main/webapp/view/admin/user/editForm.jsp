@@ -236,11 +236,17 @@
                                                             <c:when test="${role == 2}">
                                                                 <option name="user" value="1">Người dùng</option>
                                                                 <option name="admin" value="2" selected>Admin</option>
-
+                                                                <option name="vipUser" value="3">Người dùng VIP 1</option>
                                                             </c:when>
                                                             <c:when test="${role == 1}">
                                                                 <option name="user" value="1" selected>Người dùng</option>
                                                                 <option name="admin" value="2">Admin</option>
+                                                                <option name="vipUser" value="3">Người dùng VIP 1</option>
+                                                            </c:when>
+                                                            <c:when test="${role == 3}">
+                                                                <option name="user" value="1">Người dùng</option>
+                                                                <option name="admin" value="2">Admin</option>
+                                                                <option name="vipUser" value="3" selected>Người dùng VIP 1</option>
                                                             </c:when>
                                                         </c:choose>
                                                     </select>

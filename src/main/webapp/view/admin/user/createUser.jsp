@@ -252,6 +252,7 @@
                                                     <select class="form-control" name="role">
                                                         <option name="user" value="1">Người dùng</option>
                                                         <option name="admin" value="2">Admin</option>
+                                                        <option name="vipUser" value="3">Người dùng VIP</option>
                                                     </select>
                                                     <div id="roleError"></div>
                                                 </div>
