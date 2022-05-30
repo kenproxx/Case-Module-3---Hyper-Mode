@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">
 </head>
 
 <body>
@@ -66,7 +66,7 @@
                         <input type="text" placeholder="Địa chỉ" name="address" class="form-control">
                         <div id="addressError"></div>
                     </div>
-                    <button class="btn btn-block login-btn" type="submit">Dang ky</button>
+                    <button class="btn btn-block login-btn" type="submit">Đăng ký</button>
                 </form>
                 <c:if test='${message != null}'>
                     <span style="font-size: 20px; color: black">${message}</span>
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="col-sm-6 px-0 d-none d-sm-block">
-            <img src="" alt="login image" class="login-img">
+            <img src="/resources/images/icons/logo.png" alt="login image" class="login-img">
         </div>
     </div>
 </div>

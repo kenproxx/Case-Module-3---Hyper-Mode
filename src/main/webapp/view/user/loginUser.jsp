@@ -1,60 +1,62 @@
 <%--
   Created by IntelliJ IDEA.
   User: MY PC
-  Date: 27/05/2022
-  Time: 10:45 SA
+  Date: 29/05/2022
+  Time: 12:18 CH
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Đăng nhập</title>
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Player Duo V2.1 Admin</title>
+    <link rel="stylesheet" href="/resources/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/resources/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/resources/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/resources/css/style.css"/>
+    <link rel="shortcut icon" href="/resources/images/62581209.jpg"/>
 </head>
 <body>
-<main>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 login-section-wrapper">
-                <div class="brand-wrapper">
-                </div>
-                <div class="login-wrapper my-auto">
-                    <h1 class="login-title">Đăng nhập</h1>
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="username">Tên đăng nhập</label>
-                            <input type="text" name="username" id="username" class="form-control">
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="password">Mật khẩu</label>
-                            <input type="password" name="password" id="password" class="form-control">
-                        </div>
-                        <button name="login" id="login" class="btn btn-block login-btn" type="submit" value="Đăng nhập">
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+            <div class="row flex-grow">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auth-form-light text-left p-5">
+                        <h6 class="font-weight-light">Sign in to continue</h6>
                         <c:if test="${requestScope.error != null}">
                             <span class="font-weight-light">${requestScope.error}</span>
                         </c:if>
-                    </form>
-                    <a href="#!" class="forgot-password-link">Quên mật khẩu?</a>
-                    <p class="login-wrapper-footer-text">Bạn chưa có tài khoản?</p>
-                    <a href="/view/user/signup.jsp" class="forgot-password-link">Đăng ký tài khoản</a>
+                        <form class="pt-3" method="post">
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="mt-3">
+                                <input type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="SIGN IN">
+                            </div>
+                            <div class="my-2 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <label class="form-check-label text-muted">
+                                        <input type="checkbox" class="form-check-input"> Keep me signed in </label>
+                                </div>
+                                <a href="#" class="auth-link text-black">Forgot password?</a>
+                            </div>
+                            <div class="my-2 d-flex justify-content-between align-items-center">
+                            <a href="/view/user/signup.jsp" class="forgot-password-link">Đăng ký tài khoản</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-6 px-0 d-none d-sm-block">
-                <img src="/template/img/login.jpg" alt="login image" class="login-img">
             </div>
         </div>
     </div>
-</main>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</div>
+<script src="/resources/vendors/js/vendor.bundle.base.js"></script>
+<script src="/resources/js/off-canvas.js"></script>
+<script src="/resources/js/misc.js"></script>
 </body>
 </html>
-

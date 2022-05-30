@@ -22,9 +22,9 @@
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex align-items-center">
             <a class="navbar-brand brand-logo" href="/dashboard">
-                <img src="${pageContext.request.contextPath}/resources/images/logo.svg" alt="logo" class="logo-dark"/>
+                <img src="${pageContext.request.contextPath}/resources/images/icons/logo.png" alt="logo" class="logo-dark"/>
             </a>
-            <a class="navbar-brand brand-logo-mini" href="/dashboard"><img src="${pageContext.request.contextPath}/resources/images/logo-mini.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="/dashboard"><img src="${pageContext.request.contextPath}/resources/images/icons/logo.png" alt="logo"/></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
             <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Player Duo dashboard!</h5>
@@ -36,7 +36,7 @@
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                        aria-expanded="false">
                         <img class="img-xs rounded-circle ml-2"
-                             src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                             src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
                              alt="Profile image">
                         <span class="font-weight-normal"> Admin </span></a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -70,12 +70,12 @@
                     <a href="#" class="nav-link">
                         <div class="profile-image">
                             <img class="img-xs rounded-circle"
-                                 src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
                                  alt="profile image">
                             <div class="dot-indicator bg-success"></div>
                         </div>
                         <div class="text-wrapper">
-                            <p class="profile-name">Allen Moreno</p>
+                            <p class="profile-name">Nguyễn Trung Kiên</p>
                             <p class="designation">Administrator</p>
                         </div>
                         <div class="icon-container">
@@ -94,33 +94,6 @@
                     </a>
                 </li>
                 <li class="nav-item nav-category"><span class="nav-link"></span></li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
-                       aria-controls="product">
-                        <span class="menu-title">Quản lý sản phẩm</span>
-                        <i class="icon-basket-loaded menu-icon"></i>
-                    </a>
-                    <div class="collapse" id="product">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=view_product">Xem sản phẩm</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=create_product">Thêm sản phẩm</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#brand" aria-expanded="false"
-                       aria-controls="brand">
-                        <span class="menu-title">Quản lý Nhà cung cấp</span>
-                        <i class="icon-grid menu-icon"></i>
-                    </a>
-
-                    <div class="collapse" id="brand">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=view_catalog">Xem danh mục</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=create_catalog">Thêm danh mục</a></li>
-                        </ul>
-                    </div>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#bill" aria-expanded="false"
                        aria-controls="bill">

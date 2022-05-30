@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: MY PC
   Date: 30/05/2022
-  Time: 8:58 SA
+  Time: 11:23 SA
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Player Duo Admin</title>
+    <title>Stellar Admin</title>
     <link rel="stylesheet" href="resources/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="resources/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
@@ -21,15 +21,11 @@
 </head>
 <body>
 <div class="container-scroller">
-    <%--header--%>
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex align-items-center">
             <a class="navbar-brand brand-logo" href="/dashboard">
                 <img src="${pageContext.request.contextPath}/resources/images/icons/logo.png" alt="logo" class="logo-dark"/>
             </a>
-            <a class="navbar-brand brand-logo-mini" href="/dashboard"><img
-                    src="${pageContext.request.contextPath}/resources/images/logo-mini.svg"
-                    alt="logo"/></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
             <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Player Duo dashboard!</h5>
@@ -41,16 +37,15 @@
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                        aria-expanded="false">
                         <img class="img-xs rounded-circle ml-2"
-                             src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                             src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
                              alt="Profile image">
                         <span class="font-weight-normal"> Admin </span></a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
                             <img class="img-md rounded-circle"
-                                 src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
                                  alt="Profile image">
                             <p class="mb-1 mt-3">Admin</p>
-                            <p class="font-weight-light text-muted mb-0">admin@gmail.com</p>
                         </div>
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile
                             <span class="badge badge-pill badge-danger">1</span></a>
@@ -70,7 +65,6 @@
         </div>
     </nav>
     <div class="container-fluid page-body-wrapper">
-        <%--left menu--%>
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
                 <li class="nav-item nav-profile">
@@ -100,20 +94,7 @@
                         <i class="icon-screen-desktop menu-icon"></i>
                     </a>
                 </li>
-                <li class="nav-item nav-category"><span class="nav-link">Player</span></li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
-                       aria-controls="product">
-                        <span class="menu-title">Quản lý Player</span>
-                        <i class="icon-basket-loaded menu-icon"></i>
-                    </a>
-                    <div class="collapse" id="product">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=view_product">Xem Player</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=create_product">Thêm Player</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li class="nav-item nav-category"><span class="nav-link">Cửa hàng</span></li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#bill" aria-expanded="false"
                        aria-controls="bill">
@@ -150,145 +131,160 @@
                     <div class="col-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <form method="post" class="form-sample" name="userForm" onsubmit="return validate();">
+                                <form method="post" name="userForm" class="form-sample" onsubmit="return validate()">
                                     <p class="card-description"> Thông tin cá nhân </p>
                                     <div class="row">
-                                        <%--first name--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Tên</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="firstName" class="form-control"/>
+                                                    <input type="text" name="firstName" class="form-control" value="${user.getFirstName()}"/>
                                                     <div id="firstNameError"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <%--last name--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Họ và tên đệm</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="lastName" class="form-control"/>
+                                                    <input type="text" name="lastName" class="form-control" value="${user.getLastName()}"/>
                                                     <div id="lastNameError"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <%--gender--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Giới tính</label>
                                                 <div class="col-sm-9">
                                                     <select class="form-control" name="gender">
-                                                        <option name="male" value="1">Nam</option>
-                                                        <option name="female" value="0">Nữ</option>
+                                                        <c:set var="gender" value="${user.getGender()}"/>
+                                                        <c:choose>
+                                                            <c:when test="${gender}">
+                                                                <option name="male" value="1" selected>Nam</option>
+                                                                <option name="female" value="0">Nữ</option>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <option name="male" value="1">Nam</option>
+                                                                <option name="female" value="0" selected>Nữ</option>
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </select>
                                                     <div id="genderError"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <%--date of birth--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Ngày sinh</label>
                                                 <div class="col-sm-9">
-                                                    <input type="date" name="dateOfBirth" class="form-control"/>
+                                                    <input type="date" class="form-control" name="dateOfBirth" value="${user.getDateOfBirth()}"/>
                                                     <div id="dateOfBirthError"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <%--phone number--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Số điện thoại</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="phoneNumber" class="form-control"/>
+                                                    <input type="text" class="form-control" name="phoneNumber" value="${user.getPhone()}"/>
                                                     <div id="phoneNumberError"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <%--email--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Email</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="email" id="email" class="form-control" />
+                                                    <input type="email" class="form-control" name="email" value="${user.getEmail()}"/>
                                                     <div id="emailError"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <%--username--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Tên đăng nhập</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="username" class="form-control"/>
+                                                    <input type="text" class="form-control" name="username" value="${user.getUsername()}"/>
                                                     <div id="usernameError"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <%--password--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Mật khẩu</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="password" class="form-control"/>
+                                                    <input type="text" class="form-control" name="password" value="${user.getPassword()}"/>
                                                     <div id="passwordError"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <%--role--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Loại tài khoản</label>
                                                 <div class="col-sm-9">
                                                     <select class="form-control" name="role">
-                                                        <option name="user" value="1">Người dùng</option>
-                                                        <option name="admin" value="2">Admin</option>
+                                                        <c:set var="role" value="${user.getRoleId()}"/>
+                                                        <c:choose>
+                                                            <c:when test="${role == 2}">
+                                                                <option name="user" value="1">Người dùng</option>
+                                                                <option name="admin" value="2" selected>Admin</option>
+
+                                                            </c:when>
+                                                            <c:when test="${role == 1}">
+                                                                <option name="user" value="1" selected>Người dùng</option>
+                                                                <option name="admin" value="2">Admin</option>
+                                                            </c:when>
+                                                        </c:choose>
                                                     </select>
                                                     <div id="roleError"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <%--status--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Trạng thái</label>
                                                 <div class="col-sm-9">
                                                     <select class="form-control" name="status">
-                                                        <option name="admin" value="1">Đang hoạt động</option>
-                                                        <option name="user" value="0">Bị khóa</option>
+                                                        <c:set var="status" value="${user.getStatus()}"/>
+                                                        <c:choose>
+                                                            <c:when test="${status == 1}">
+                                                                <option name="admin" value="1" selected>Đang hoạt động</option>
+                                                                <option name="user" value="0">Bị khóa</option>
+                                                            </c:when>
+                                                            <c:when test="${status == 0}">
+                                                                <option name="admin" value="1">Đang hoạt động</option>
+                                                                <option name="user" value="0" selected>Bị khóa</option>
+                                                            </c:when>
+                                                        </c:choose>
                                                     </select>
                                                     <div id="statusError"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <p class="card-description"> Địa chỉ </p>
                                     <div class="row">
-                                        <%--address--%>
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label class="col-sm-3 col-form-label">Địa chỉ</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="address" class="form-control"/>
+                                                    <input type="text" name="address" class="form-control" value="${user.getAddress()}"/>
                                                     <div id="addressError"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <%--button--%>
                                         <button type="submit" class="btn btn-primary mr-2">Lưu</button>
-                                        <button type="reset" class="btn btn-light">Xóa</button>
                                     </div>
-                                    <%--message--%>
                                     <div class="row" style="margin-top: 20px">
                                         <p>
                                             <c:if test='${message != null}'>
@@ -303,8 +299,8 @@
                 </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a
-                            href="https://www.bootstrapdash.com/" target="_blank">Bootstrap Dash</a>. All rights reserved.</span>
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a
+                            href="https://www.bootstrapdash.com/" target="_blank"></a>. All rights reserved.</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
                                 class="icon-heart text-danger"></i></span>
                     </div>
@@ -320,5 +316,7 @@
     <script src="resources/js/typeahead.js"></script>
     <script src="resources/js/select2.js"></script>
     <script src="resources/js/validateUserFromAdmin.js"></script>
+</div>
 </body>
 </html>
+

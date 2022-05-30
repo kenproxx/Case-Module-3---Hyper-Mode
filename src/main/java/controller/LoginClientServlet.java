@@ -1,5 +1,6 @@
 package controller;
 
+import model.User;
 import service.user.ServiceUserImp;
 import util.Error;
 import util.Link;
@@ -38,26 +39,35 @@ public class LoginClientServlet extends HttpServlet {
     }
 
     private void confirmLoginClient(HttpServletRequest request, HttpServletResponse response) {
+        User admin;
         Map<String, String> listClient;
         String username;
         String password;
         RequestDispatcher requestDispatcher;
         try {
+            admin = serviceUserImp.selectAdmin();
             listClient = serviceUserImp.selectClient();
             username = request.getParameter("username");
             password = request.getParameter("password");
             if (password.equals(listClient.get(username))) {
                 requestDispatcher = request.getRequestDispatcher(Link.LOGIN_CLIENT_TO_REDIRECT_HOME);
                 requestDispatcher.forward(request, response);
+            }
+             else  if (username.equals(admin.getUsername()) && password.equals(admin.getPassword())) {
+                request.getSession().setAttribute("admin", admin);
+                response.sendRedirect("/dashboard");
             } else {
                 request.setAttribute(Error.ERROR, Error.ERROR_004);
-                requestDispatcher = request.getRequestDispatcher(Link.LOGIN_CLIENT_TO_LOGIN_CLIENT);
+                requestDispatcher = request.getRequestDispatcher("/view/user/loginUser.jsp");
                 requestDispatcher.forward(request, response);
             }
-        } catch (ServletException ex) {
-            System.err.println(Error.ERROR_021);
-        } catch (IOException ex) {
-            System.err.println(Error.ERROR_022);
+        }catch(ServletException e){
+                e.printStackTrace();
+            } catch(SQLException e){
+                e.printStackTrace();
+            } catch(IOException e){
+                e.printStackTrace();
+            }
         }
+
     }
-}

@@ -104,15 +104,15 @@
                         </li>
 
                         <li>
-                            <a href="views/user/cart-detail.jsp">Giỏ hàng</a>
+                            <a href="view/user/cart-detail.jsp">Giỏ hàng</a>
                         </li>
 
                         <li>
-                            <a href="views/user/about.jsp">Về chúng tôi</a>
+                            <a href="view/user/about.jsp">Về chúng tôi</a>
                         </li>
 
                         <li>
-                            <a href="views/user/contact.jsp">Liên hệ</a>
+                            <a href="view/user/contact.jsp">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
@@ -215,11 +215,11 @@
             </li>
 
             <li>
-                <a href="views/user/about.jsp">Về chúng tôi</a>
+                <a href="view/user/about.jsp">Về chúng tôi</a>
             </li>
 
             <li>
-                <a href="views/user/contact.jsp">Liên hệ</a>
+                <a href="view/user/contact.jsp">Liên hệ</a>
             </li>
         </ul>
     </div>

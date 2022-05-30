@@ -399,7 +399,7 @@
                                                 <td>30 Sep 2019</td>
                                                 <td>20 Oct 2019</td>
                                                 <td>
-                                                    <div class="badge badge-success p-2">Paid</div>
+                                                    <div class="badge badge-success p-2">Pai`d</div>
                                                 </td>
                                             </tr>
                                             </tbody>
