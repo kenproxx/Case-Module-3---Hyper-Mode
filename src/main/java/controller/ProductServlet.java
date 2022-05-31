@@ -18,8 +18,6 @@ import java.util.List;
 
 @WebServlet(name = "ProductServlet", urlPatterns = "/product")
 public class ProductServlet extends HttpServlet {
-    public static final int RECORD_PER_PAGE_DISPLAY = 10;
-    public static final int START_PAGE_DISPLAY = 1;
     private IProductService productService = new ProductServiceImp();
     private StockService stockService = new StockService();
     private List<ImportRecord> importRecords;
@@ -27,7 +25,7 @@ public class ProductServlet extends HttpServlet {
     private Product product;
     private int currentPage = 1;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -81,7 +79,7 @@ public class ProductServlet extends HttpServlet {
         showForm(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String action = request.getParameter("action");
         String type = request.getParameter("type");
         int id = 0;
@@ -131,15 +129,12 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-    private void showProductList(HttpServletRequest request, HttpServletResponse response) {
+    private void showProductList(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String button = request.getParameter("button");
         if (button == null) {
             button = "";
         }
-        int size;
-        int pages = START_PAGE_DISPLAY;
-
-
+        int pages = 1;
         switch (button) {
             case "next":
                 if (++currentPage > pages) {
@@ -165,7 +160,16 @@ public class ProductServlet extends HttpServlet {
         for (int times = 1; times <= 10; times++) {
             pageIndex[times - 1] = pageIndexStart + times;
         }
-
+        try {
+            List<Product> productList = productService.getProductList();
+            request.setAttribute("pages", pages);
+            request.setAttribute("current", currentPage);
+            request.setAttribute("products", productList);
+            request.setAttribute("pageIndex", pageIndex);
+            request.getRequestDispatcher("view/admin/product/home.jsp").forward(request, response);
+        } catch (ServletException | IOException | SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showDetail(HttpServletRequest request, HttpServletResponse response, String type) throws ServletException, IOException {
@@ -203,12 +207,13 @@ public class ProductServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     private Product parseRequestData(HttpServletRequest request) {
         Product product = new Product();
-//        product.setDetailID(Integer.parseInt(request.getParameter("id")));
         product.setProductName(request.getParameter("product-name"));
         product.setDescription(request.getParameter("product-description"));
         product.addImages(request.getParameter("image-link-1"));

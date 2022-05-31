@@ -8,7 +8,6 @@ public class ImportRecord {
     private int productDetailID;
     private Product product;
     private String productCode;
-    private int size;
     private int price;
     private int status;
     private LocalDateTime importDateTime;
@@ -16,11 +15,10 @@ public class ImportRecord {
     public ImportRecord() {
     }
 
-    public ImportRecord(int importID, int productDetailID, Product product, int size, int price, int status, LocalDateTime importDateTime) {
+    public ImportRecord(int importID, int productDetailID, Product product, int price, int status, LocalDateTime importDateTime) {
         this.importID = importID;
         this.productDetailID = productDetailID;
         this.product = product;
-        this.size = size;
         this.price = price;
         this.status = status;
         this.importDateTime = importDateTime;
@@ -50,9 +48,6 @@ public class ImportRecord {
         return product.getProductName();
     }
 
-    public String getCatalogName() {
-        return product.getCatalogName();
-    }
 
     public void setProduct(Product product) {
         this.product = product;
@@ -64,14 +59,6 @@ public class ImportRecord {
 
     public void setProductCode(String productCode) {
         this.productCode = productCode;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 
     public int getPrice() {

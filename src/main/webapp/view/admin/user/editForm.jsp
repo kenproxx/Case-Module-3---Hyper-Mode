@@ -96,6 +96,19 @@
                 </li>
                 <li class="nav-item nav-category"><span class="nav-link">Cửa hàng</span></li>
                 <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
+                       aria-controls="product">
+                        <span class="menu-title">Quản lý sản phẩm</span>
+                        <i class="icon-basket-loaded menu-icon"></i>
+                    </a>
+                    <div class="collapse" id="product">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/admin?action=view_product">Xem sản phẩm</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="/admin?action=create_product">Thêm sản phẩm</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#bill" aria-expanded="false"
                        aria-controls="bill">
                         <span class="menu-title">Quản lý hóa đơn</span>

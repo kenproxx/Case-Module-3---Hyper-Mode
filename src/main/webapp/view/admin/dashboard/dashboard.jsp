@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Duong Shoe's Admin</title>
+    <title>Player Duo Admin</title>
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/resources/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet"
@@ -99,7 +99,7 @@
                         </a>
                         <div class="collapse" id="product">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/product?action=">Danh sách sản phẩm</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/product?action=">Danh sách sản phẩm</a></li>
                             </ul>
                         </div>
                     </li>

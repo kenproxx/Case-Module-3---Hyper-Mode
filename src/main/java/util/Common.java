@@ -7,6 +7,7 @@ public class Common {
     public static final int ACTIVE = 1;
     public static final int BLOCKED = 0;
     public static final int ADMIN = 2;
+    public static final int VIP = 3;
     public static final boolean MALE = true;
     public static final boolean FEMALE = false;
     public static final int VIEW_DETAILS_USER = 0;

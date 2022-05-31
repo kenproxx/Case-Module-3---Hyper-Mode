@@ -34,7 +34,7 @@
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-            <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome stallar dashboard!</h5>
+            <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Player Duo dashboard!</h5>
             <ul class="navbar-nav navbar-nav-right ml-auto">
                 <form class="search-form d-none d-md-block" action="#">
                     <i class="icon-magnifier"></i>
@@ -44,16 +44,16 @@
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                        aria-expanded="false">
                         <img class="img-xs rounded-circle ml-2"
-                             src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                             src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                              alt="Profile image">
-                        <span class="font-weight-normal"> Henry Klein </span></a>
+                        <span class="font-weight-normal"> Lê Văn Sơn </span></a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                         <div class="dropdown-header text-center">
                             <img class="img-md rounded-circle"
-                                 src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                                  alt="Profile image">
-                            <p class="mb-1 mt-3">Allen Moreno</p>
-                            <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                            <p class="mb-1 mt-3">Lê Văn Sơn</p>
+                            <p class="font-weight-light text-muted mb-0">anhson@gmail.com</p>
                         </div>
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile
                             <span class="badge badge-pill badge-danger">1</span></a>
@@ -81,12 +81,12 @@
                     <a href="#" class="nav-link">
                         <div class="profile-image">
                             <img class="img-xs rounded-circle"
-                                 src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                                  alt="profile image">
                             <div class="dot-indicator bg-success"></div>
                         </div>
                         <div class="text-wrapper">
-                            <p class="profile-name">Allen Moreno</p>
+                            <p class="profile-name">Lê Văn Sơn</p>
                             <p class="designation">Administrator</p>
                         </div>
                         <div class="icon-container">
@@ -99,7 +99,7 @@
                     <span class="nav-link">Dashboard</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="/index.jsp">
                         <span class="menu-title">Dashboard</span>
                         <i class="icon-screen-desktop menu-icon"></i>
                     </a>
@@ -114,7 +114,7 @@
                     <div class="collapse" id="product">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"><a class="nav-link"
-                                                    href="${pageContext.request.contextPath}/product?action=">Danh sách
+                                                    href="/product?action=">Danh sách
                                 sản
                                 phẩm</a>
                             </li>
@@ -164,23 +164,8 @@
                                 <c:choose>
                                     <c:when test="${type == 'product'}">
                                         <h4 class="card-title" style="float: left">${product.getProductName()}</h4>
-                                        <h4 class="card-title" style="float: right">Nhãn
-                                            hàng: ${product.getCatalogName()}</h4>
-                                        <p class="card-description" style="clear: both"> Size:
-                                            <code>${product.getSize()}</code></p>
                                         <p> ${product.getDescription()} </p>
                                     </c:when>
-                                    <c:when test="${type == 'catalog'}">
-                                        <h4 class="card-title">Nhãn
-                                            hàng: ${product.getCatalogName()}</h4>
-                                        <br>
-                                        <p> ${product.getCatalog().getDescription()} </p>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <h4 class="card-description"> Size:
-                                            <code style="font-size: 20px">${product.getSize()}</code></h4>
-                                    </c:otherwise>
-
                                 </c:choose>
                             </div>
                         </div>
@@ -343,7 +328,7 @@
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2017 <a
-                            href="https://www.bootstrapdash.com/" target="_blank">Bootstrap Dash</a>. All rights reserved.</span>
+                            href="https://www.bootstrapdash.com/" target="_blank"></a>. All rights reserved.</span>
                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
                             class="icon-heart text-danger"></i></span>
                 </div>

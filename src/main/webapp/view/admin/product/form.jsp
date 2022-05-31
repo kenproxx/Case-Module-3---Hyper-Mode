@@ -114,7 +114,7 @@
                     <div class="collapse" id="product">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"><a class="nav-link"
-                                                    href="${pageContext.request.contextPath}/product?">Danh sách
+                                                    href="/product?action=">Danh sách
                                 sản
                                 phẩm</a>
                             </li>

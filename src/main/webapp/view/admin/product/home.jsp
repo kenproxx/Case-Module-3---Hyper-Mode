@@ -114,7 +114,7 @@
                     <div class="collapse" id="product">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item"><a class="nav-link"
-                                                    href="${pageContext.request.contextPath}/product?">Danh sách sản phẩm</a>
+                                                    href="/product?action=">Danh sách sản phẩm</a>
                             </li>
                         </ul>
                     </div>
@@ -127,7 +127,7 @@
                     </a>
                     <div class="collapse" id="bill">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"><a class="nav-link" href="dashboard?action=view_user">Xem hóa đơn</a>
+                            <li class="nav-item"><a class="nav-link" href="/dashboard?action=view_user">Xem hóa đơn</a>
                             </li>
                         </ul>
                     </div>
@@ -169,8 +169,6 @@
                                     <tr style="text-align: center">
                                         <th style="font-weight: bold">STT</th>
                                         <th style="font-weight: bold">Sản phẩm</th>
-                                        <th style="font-weight: bold">Hãng</th>
-                                        <th style="font-weight: bold">Size</th>
                                         <th style="font-weight: bold">Tình trạng</th>
                                         <th colspan="2" style="font-weight: bold">Thao tác</th>
                                     </tr>
@@ -180,34 +178,8 @@
                                         <tr style="text-align: center">
                                             <td>${pageIndex[count.index]}</td>
                                             <td style="text-align: left">
-                                                <a href="${pageContext.request.contextPath}/product?action=detail&type=product&id=${product.getDetailID()}"
+                                                <a href="/product?action=detail&type=product&id=${product.getDetailID()}"
                                                    class="nav-link">${product.getProductName()}</a>
-                                            </td>
-                                            <td>
-                                                <a href="${pageContext.request.contextPath}/product?action=detail&type=catalog&id=${product.getDetailID()}"
-                                                   class="nav-link">${product.getCatalogName()}</a>
-                                            </td>
-                                            <td>
-                                                <a href="${pageContext.request.contextPath}/product?action=detail&type=size&id=${product.getDetailID()}"
-                                                   class="nav-link">${product.getSize()}</a>
-                                            </td>
-                                            <td>
-                                                <c:choose>
-                                                    <c:when test="${product.getStatus() == 1}">
-                                                        <a href="${pageContext.request.contextPath}/catalog?action=detail&id=${product.getDetailID()}"
-                                                           class="nav-link"
-                                                           id="status-${product.getDetailID()}"><label
-                                                                class="badge badge-success" style="cursor: pointer">
-                                                            Đang kinh doanh</label></a>
-                                                    </c:when>
-                                                    <c:when test="${product.getStatus() == 0}">
-                                                        <a href="${pageContext.request.contextPath}/catalog?action=detail&id=${product.getDetailID()}"
-                                                           class="nav-link"
-                                                           id="status-${product.getDetailID()}"><label
-                                                                class="badge badge-danger" style="cursor: pointer">
-                                                            Ngừng kinh doanh</label></a>
-                                                    </c:when>
-                                                </c:choose>
                                             </td>
                                             <td style="width: 10px">
                                                 <a href="${pageContext.request.contextPath}/product?action=update&id=${product.getDetailID()}"
@@ -255,7 +227,7 @@
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                     <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 <a
                             href="https://www.bootstrapdash.com/" target="_blank"></a>. All rights reserved.</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with Đạt và Kiên<i
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
                             class="icon-heart text-danger"></i></span>
                 </div>
             </footer>

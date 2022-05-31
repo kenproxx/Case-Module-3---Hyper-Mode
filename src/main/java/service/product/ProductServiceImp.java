@@ -49,7 +49,6 @@ public class ProductServiceImp implements IProductService{
         statement = connection.prepareStatement(Query.SELECT_PRODUCT_BY_PRODUCT_ID);
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
-        resultSet.first();
         return parseResultSet(resultSet);
     }
 
@@ -173,17 +172,19 @@ public class ProductServiceImp implements IProductService{
 
     private Product parseResultSet(ResultSet resultSet) throws SQLException {
         Product product = new Product();
-        product.setProductID(resultSet.getInt("product_id"));
-        product.setProductName(resultSet.getString("product_name"));
-        product.setDescription(resultSet.getString("product.description"));
-        product.setStatus(resultSet.getInt("product.status"));
-        product.setImages(getImageLinks(product));
+        if (resultSet.next()) {
+            product.setProductID(resultSet.getInt("product.id"));
+            product.setProductName(resultSet.getString("product_name"));
+            product.setDescription(resultSet.getString("product.description"));
+            product.setStatus(resultSet.getInt("product.status"));
+            product.setImages(getImageLinks(product));
+        }
         return product;
     }
 
     private Product parseSimpleResultSet(ResultSet resultSet) throws SQLException {
         Product product = new Product();
-        product.setProductID(resultSet.getInt("product_id"));
+        product.setProductID(resultSet.getInt("product.id"));
         product.setProductName(resultSet.getString("product_name"));
         product.setDescription(resultSet.getString("product.description"));
         product.setImages(getImageLinks(product));

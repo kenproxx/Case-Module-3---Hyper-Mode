@@ -108,20 +108,6 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#brand" aria-expanded="false"
-                       aria-controls="brand">
-                        <span class="menu-title">Quản lý Nhà cung cấp</span>
-                        <i class="icon-grid menu-icon"></i>
-                    </a>
-
-                    <div class="collapse" id="brand">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=view_catalog">Xem danh mục</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="/admin?action=create_catalog">Thêm danh mục</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#bill" aria-expanded="false"
                        aria-controls="bill">
                         <span class="menu-title">Quản lý hóa đơn</span>

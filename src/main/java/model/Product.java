@@ -6,17 +6,13 @@ import java.util.List;
 public class Product {
     private int detailID;
     private int productID;
-    private int catalogID;
     private String productName;
     private String description;
     private int status;
-    private Catalog catalog;
-    private int size;
     private List<String> images;
 
     public Product() {
         images = new LinkedList<>();
-        catalog = new Catalog();
     }
 
     public Product(int detailID, int productID, String productName, String description, int status, List<String> images) {
@@ -28,17 +24,14 @@ public class Product {
         this.images = images;
     }
 
-    public Product(int detailID, int productID, int catalogID, String productName, String description, int status, Catalog catalog, int size, List<String> images) {
-        this.detailID = detailID;
+    public Product(int productID, String productName, String description, int status, List<String> images) {
         this.productID = productID;
-        this.catalogID = catalogID;
         this.productName = productName;
         this.description = description;
         this.status = status;
-        this.catalog = catalog;
-        this.size = size;
         this.images = images;
     }
+
 
     public int getDetailID() {
         return detailID;
@@ -54,14 +47,6 @@ public class Product {
 
     public void setProductID(int productID) {
         this.productID = productID;
-    }
-
-    public int getCatalogID() {
-        return catalogID;
-    }
-
-    public void setCatalogID(int catalogID) {
-        this.catalogID = catalogID;
     }
 
     public String getProductName() {
@@ -86,26 +71,6 @@ public class Product {
 
     public void setStatus(int status) {
         this.status = status;
-    }
-
-    public Catalog getCatalog() {
-        return catalog;
-    }
-
-    public String getCatalogName() {
-        return catalog.getCatalogName();
-    }
-
-    public void setCatalog(Catalog catalog) {
-        this.catalog = catalog;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 
     public List<String> getImages() {
