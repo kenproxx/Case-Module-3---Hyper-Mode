@@ -365,7 +365,7 @@
                     </div><!--new_message_head-->
 
                     <div class="chat_area chat" id="chat" name="chat">
-
+                    <div class="chat-sm"></div>
                     </div><!--chat_area-->
                     <div class="message_write">
                         <textarea class="form-control" id="msg" name="msg" placeholder="type a message"></textarea>
