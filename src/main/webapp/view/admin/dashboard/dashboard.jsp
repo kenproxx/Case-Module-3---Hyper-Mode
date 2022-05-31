@@ -32,13 +32,13 @@
                         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                            aria-expanded="false">
                             <img class="img-xs rounded-circle ml-2"
-                                 src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                                  alt="Profile image">
                             <span class="font-weight-normal"> Admin </span></a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
                                 <img class="img-md rounded-circle"
-                                     src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                                     src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                                      alt="Profile image">
                                 <p class="mb-1 mt-3">Admin</p>
                                 <p class="font-weight-light text-muted mb-0">admin@gmail.com</p>
@@ -50,7 +50,7 @@
                             <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i>
                                 Activity</a>
                             <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
-                            <a href="/admin" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+                            <a href="/login" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
                         </div>
                     </li>
                 </ul>
@@ -67,12 +67,12 @@
                         <a href="#" class="nav-link">
                             <div class="profile-image">
                                 <img class="img-xs rounded-circle"
-                                     src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
+                                     src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                                      alt="profile image">
                                 <div class="dot-indicator bg-success"></div>
                             </div>
                             <div class="text-wrapper">
-                                <p class="profile-name">Nguyễn Trung Kiên</p>
+                                <p class="profile-name">Lê Văn Sơn</p>
                                 <p class="designation">Administrator</p>
                             </div>
                             <div class="icon-container">
@@ -91,6 +91,18 @@
                         </a>
                     </li>
                     <li class="nav-item nav-category"><span class="nav-link">Player</span></li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
+                           aria-controls="product">
+                            <span class="menu-title">Quản lý sản phẩm</span>
+                            <i class="icon-basket-loaded menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="product">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="${pageContext.request.contextPath}/product?action=">Danh sách sản phẩm</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#bill" aria-expanded="false"
                            aria-controls="bill">

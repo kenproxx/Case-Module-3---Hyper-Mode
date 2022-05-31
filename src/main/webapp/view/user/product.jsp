@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -265,6 +266,49 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="row isotope-grid">
+            <c:forEach var="item" items="${itemList}">
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${item.getProduct().getCatalogID()}">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="${item.getProduct().getImages()[0]}" width="315" height="350" alt="IMG-PRODUCT">
+                            <a href="/home?action=view-detail&id=${item.getProduct().getProductID()}"
+                               class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+                                Xem nhanh
+                            </a>
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="/home?action=view-detail&id=${item.getProduct().getProductID()}"
+                                   class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    <c:out value="${item.getProduct().getProductName()}"/>
+                                </a>
+
+                                <span class="stext-105 cl3 vnd">
+
+                                    <c:set var="price" value="${item.getPrice()}"/>
+                                    <fmt:formatNumber type="number" maxFractionDigits="3" value="${price}"/>
+
+                                </span>
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04"
+                                         src="${pageContext.request.contextPath}/resources/images/icons/icon-heart-01.png"
+                                         alt="ICON" onclick="like()">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                                         src="${pageContext.request.contextPath}/resources/images/icons/icon-heart-02.png"
+                                         alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
     </div>
 </div>

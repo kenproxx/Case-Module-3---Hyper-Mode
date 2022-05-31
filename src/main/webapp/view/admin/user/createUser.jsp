@@ -41,7 +41,7 @@
                     <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                        aria-expanded="false">
                         <img class="img-xs rounded-circle ml-2"
-                             src="${pageContext.request.contextPath}/resources/images/faces/face8.jpg"
+                             src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                              alt="Profile image">
                         <span class="font-weight-normal"> Admin </span></a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -59,7 +59,7 @@
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i>
                             Activity</a>
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
-                        <a href="/admin" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+                        <a href="/login" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
                     </div>
                 </li>
             </ul>
@@ -77,12 +77,12 @@
                     <a href="#" class="nav-link">
                         <div class="profile-image">
                             <img class="img-xs rounded-circle"
-                                 src="${pageContext.request.contextPath}/template/img/team-kien.jpg"
+                                 src="${pageContext.request.contextPath}/template/img/anhson.jpg"
                                  alt="profile image">
                             <div class="dot-indicator bg-success"></div>
                         </div>
                         <div class="text-wrapper">
-                            <p class="profile-name">Nguyễn Trung Kiên</p>
+                            <p class="profile-name">Lê Văn Sơn</p>
                             <p class="designation">Administrator</p>
                         </div>
                         <div class="icon-container">
