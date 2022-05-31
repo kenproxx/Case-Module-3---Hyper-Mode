@@ -364,7 +364,7 @@
                     </div></div>
                     </div><!--new_message_head-->
 
-                    <div class="chat_area chat" id="chat">
+                    <div class="chat_area chat" id="chat" name="chat">
 
                     </div><!--chat_area-->
                     <div class="message_write">
@@ -691,7 +691,7 @@
 <!--===============================================================================================-->
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/front-end-views.js"></script>
-
+<script src="resources/js/script.js" type="text/javascript"></script>
 
 </body>
 </html>
