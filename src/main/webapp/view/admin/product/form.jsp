@@ -200,30 +200,6 @@
                                                name="product-name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="catalog">Hãng</label>
-                                        <select class="form-control" id="catalog" name="catalog-id">
-                                            <c:forEach items="${catalogList}" var="catalog">
-                                                <option value="${catalog.getCatalogID()}"
-                                                        <c:if test="${product.getCatalogID() == catalog.getCatalogID()}">
-                                                            selected
-                                                        </c:if>
-                                                >${catalog.getCatalogName()}</option>
-                                            </c:forEach>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="size">Size</label>
-                                        <select class="form-control" id="size" name="product-size">
-                                            <c:forEach items="${sizeList}" var="size">
-                                                <option value="${size}"
-                                                        <c:if test="${product.getSize() == size}">
-                                                            selected
-                                                        </c:if>
-                                                >${size}</option>
-                                            </c:forEach>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="image1">Link Ảnh 1</label>
                                         <input type="text" class="form-control" id="image1"
                                         <c:choose>

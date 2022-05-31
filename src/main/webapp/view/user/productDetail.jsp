@@ -68,7 +68,7 @@
     <div class="top-bar">
       <div class="content-topbar flex-sb-m h-full container">
         <div class="left-top-bar">
-          Miễn phí vận chuyển cho đơn hàng từ 5.000.000 VNĐ
+          Có người yêu giá chỉ từ 100.000 VNĐ
         </div>
 
         <div class="right-top-bar flex-w h-full">
@@ -93,7 +93,7 @@
 
         <!-- Logo desktop -->
         <a href="#" class="logo">
-          <img src="${pageContext.request.contextPath}/resources/images/icons/logo-01.png" alt="IMG-LOGO">
+          <img src="${pageContext.request.contextPath}/resources/images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
         <!-- Menu desktop -->
@@ -103,20 +103,8 @@
               <a href="/home?action">Trang chủ</a>
             </li>
 
-            <li class="label1" data-label1="hot">
-              <a href="/home?action=product">Sản phẩm</a>
-              <ul class="sub-menu">
-                <li><a href="index.html">Adidas</a></li>
-                <li><a href="home-02.html">Nike</a></li>
-                <li><a href="home-03.html">Gucci</a></li>
-                <li><a href="home-03.html">Puma</a></li>
-                <li><a href="home-03.html">Biti's</a></li>
-                <li><a href="home-03.html">Vans</a></li>
-              </ul>
-            </li>
-
             <li >
-              <a href="/addtoCart?action=">Giỏ hàng</a>
+              <a href="/addToCart?action=">Giỏ hàng</a>
             </li>
 
             <li>
@@ -153,7 +141,7 @@
   <div class="wrap-header-mobile">
     <!-- Logo moblie -->
     <div class="logo-mobile">
-      <a href="/home?action="><img src="${pageContext.request.contextPath}/resources/images/icons/logo-01.png"
+      <a href="/home?action="><img src="${pageContext.request.contextPath}/resources/images/icons/logo.png"
                                    alt="IMG-LOGO"></a>
     </div>
 
@@ -188,7 +176,7 @@
     <ul class="topbar-mobile">
       <li>
         <div class="left-top-bar">
-          Miễn phí vận chuyển cho đơn hàng từ 5.000.000 VNĐ
+          Có người yêu giá chỉ từ 100.000 VNĐ
         </div>
       </li>
 
@@ -217,14 +205,6 @@
 
       <li >
         <a href="/home?action=product"  class="label1 rs1" data-label1="hot">Sản phẩm</a>
-        <ul class="sub-menu-m">
-          <li><a href="index.html">Adidas</a></li>
-          <li><a href="home-02.html">Nike</a></li>
-          <li><a href="home-03.html">Gucci</a></li>
-          <li><a href="home-03.html">Puma</a></li>
-          <li><a href="home-03.html">Biti's</a></li>
-          <li><a href="home-03.html">Vans</a></li>
-        </ul>
         <span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</span>
@@ -369,31 +349,6 @@
           <span class="mtext-106 cl2 vnd" style="font-weight: bold">
             ${price}
           </span>
-
-          <p class="stext-102 cl3 p-t-23">
-            ${product.getCatalog().getDescription()}
-          </p>
-
-          <!--  -->
-          <div class="p-t-33">
-            <div class="flex-w flex-r-m p-b-10">
-              <div class="size-203 flex-c-m respon6">
-                Size
-              </div>
-
-              <div class="size-204 respon6-next">
-                <div class="rs1-select2 bor8 bg0">
-                  <select class="js-select2" name="time">
-                    <option>Choose an option</option>
-                    <c:forEach var="size" items="${size}">
-                      <option><c:out value="${size}"></c:out></option>
-                    </c:forEach>
-                  </select>
-                  <div class="dropDownSelect2"></div>
-                </div>
-              </div>
-            </div>
-
             <div class="flex-w flex-r-m p-b-10">
               <div class="size-204 flex-w flex-m respon6-next">
                 <div class="wrap-num-product flex-w m-r-20 m-tb-10">
@@ -408,7 +363,7 @@
                     <i class="fs-16 zmdi zmdi-plus"></i>
                   </div>
                 </div>
-                <c:url value="/addtoCart?action=cart&id=${product.getProductID()}" var="addtoCart"/>
+                <c:url value="/addToCart?action=cart&id=${product.getProductID()}" var="addtoCart"/>
                 <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                   <a href="${addtoCart}" style="text-decoration: none; color: white">Thêm vào giỏ hàng</a>
                 </button>
@@ -455,10 +410,6 @@
           </li>
 
           <li class="nav-item p-b-10">
-            <a class="nav-link" data-toggle="tab" href="#information" role="tab" style="font-family: Helvetica, sans-serif">Cách chọn size</a>
-          </li>
-
-          <li class="nav-item p-b-10">
             <a class="nav-link" data-toggle="tab" href="#reviews" role="tab" style="font-family: Helvetica, sans-serif">Đánh giá sản phẩm (1)</a>
           </li>
         </ul>
@@ -474,14 +425,6 @@
             </div>
           </div>
 
-          <!-- - -->
-          <div class="tab-pane fade" id="information" role="tabpanel">
-            <div class="row">
-              <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                <img src="${pageContext.request.contextPath}/resources/images/page/size-table.jpg" alt="Lựa chọn size">
-              </div>
-            </div>
-          </div>
 
           <!-- - -->
           <div class="tab-pane fade" id="reviews" role="tabpanel">
@@ -510,8 +453,7 @@
                       </div>
 
                       <p class="stext-102 cl6">
-                        Sản phẩm của shop rất tốt, nhờ đôi giày này mà tôi đã tìm được người đàn ông đích thực của đời mình,
-                        xin chân thành cảm ơn DuongShoe Shop.
+                        Tôi là Phong, tôi rất hạnh phúc khi tìm thấy tình yêu của cuộc đời mình. Cảm ơn Player Duo v2.1 rất nhiều.
                       </p>
                     </div>
                   </div>
@@ -579,9 +521,6 @@
 				SKU: ${product.getProductID()}
 			</span>
 
-    <span class="stext-107 cl6 p-lr-25">
-      ${product.getCatalogName()}
-    </span>
   </div>
 </section>
 
@@ -591,51 +530,8 @@
 <footer class="bg3 p-t-75 p-b-32">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-lg-3 p-b-50">
-        <h4 class="stext-301 cl0 p-b-30">
-          Sản phẩm
-        </h4>
 
-        <ul>
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Adidas
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Nike
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Gucci
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Puma
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Biti's
-            </a>
-          </li>
-
-          <li class="p-b-10">
-            <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-              Vans
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-sm-6 col-lg-3 p-b-50">
+      <div class="col-sm-12 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
           Hỗ trợ
         </h4>
@@ -667,13 +563,13 @@
         </ul>
       </div>
 
-      <div class="col-sm-6 col-lg-3 p-b-50">
+      <div class="col-sm-12 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
           Liên hệ
         </h4>
 
         <p class="stext-107 cl7 size-201">
-          Bạn có câu hỏi dành cho chúng tôi? Hãy gửi nó đến cửa hàng của chúng tôi tại số 15 lô TT04 khu đô
+          Bạn có câu hỏi dành cho chúng tôi? Hãy gửi nó đến cửa hàng của chúng tôi tại số 23 lô TT01 khu đô
           thị Mon City
           hoặc gọi chúng tôi qua số điện thoại: (+84)988.888.888
         </p>
@@ -693,7 +589,7 @@
         </div>
       </div>
 
-      <div class="col-sm-6 col-lg-3 p-b-50">
+      <div class="col-sm-12 col-lg-3 p-b-50">
         <h4 class="stext-301 cl0 p-b-30">
           Hộp thư
         </h4>
@@ -741,7 +637,7 @@
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         Copyright &copy;<script>document.write(new Date().getFullYear());</script>
         All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-              href="https://codegym.vn/" target="_blank">duongShoeTeam</a>
+              href="https://codegym.vn/" target="_blank">Player Duo</a>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
       </p>

@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "AddToCartServlet", urlPatterns = "/addtoCart")
+@WebServlet(name = "AddToCartServlet", urlPatterns = "/addToCart")
 public class AddToCartServlet extends HttpServlet {
     private IProductService productService = new ProductServiceImp();
 

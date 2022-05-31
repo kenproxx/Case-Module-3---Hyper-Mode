@@ -19,7 +19,14 @@ public class Product {
         catalog = new Catalog();
     }
 
-
+    public Product(int detailID, int productID, String productName, String description, int status, List<String> images) {
+        this.detailID = detailID;
+        this.productID = productID;
+        this.productName = productName;
+        this.description = description;
+        this.status = status;
+        this.images = images;
+    }
 
     public Product(int detailID, int productID, int catalogID, String productName, String description, int status, Catalog catalog, int size, List<String> images) {
         this.detailID = detailID;

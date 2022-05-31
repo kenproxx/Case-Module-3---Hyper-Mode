@@ -101,6 +101,7 @@
                     </a>
                 </li>
                 <li class="nav-item nav-category"><span class="nav-link">Player</span></li>
+
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#product" aria-expanded="false"
                        aria-controls="product">

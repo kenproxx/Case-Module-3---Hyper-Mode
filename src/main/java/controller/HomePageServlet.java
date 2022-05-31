@@ -76,8 +76,6 @@ public class HomePageServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Product existingProduct = productService.getProductByProductID(id);
         request.setAttribute("product", existingProduct);
-        List<Integer> size = productService.getSizeListByProductID(id);
-        request.setAttribute("size", size);
         int price = productService.price(id);
         DecimalFormat formatter = new DecimalFormat("###,###,###.##");
         String priceFormatter = formatter.format(price);
