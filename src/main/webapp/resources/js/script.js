@@ -53,14 +53,30 @@ let str17 = "Học hành chán vler"
 let str18 = "khi bắt đầu, đừng nghe thằng nào nói cả"
 let str19 = "khi bắt đầu, hãy nghĩ tới thất bại"
 let str20 = "khi bắt đầu, đừng nghĩ tới thất bại"
-
+let img1 = "/template/img/girl 1.jpg";
+let img2 = "/template/img/girl 2.jpg";
+let img3 = "/template/img/girl 3.jpg";
+let img4 = "/template/img/girl 4.jpg";
+let img5 = "/template/img/girl 5.jpg";
+let img6 = "/template/img/girl 6.jpg";
+let img7 = "/template/img/girl 7.jpg";
+let img8 = "/template/img/girl 8.jpg";
+let img9 = "/template/img/girl 9.jpg";
+let img10 = "/template/img/girl 10.jpg";
+let img11 = "/template/img/girl 11.jpg";
+let img12 = "/template/img/girl 12.jpg";
+let img13 = "/template/img/girl 13.jpg";
+let img14 = "/template/img/girl 14.jpg";
+let img15 = "/template/img/girl 15.jpg";
 
 
 function test() {
     let arr = [str1, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14, str15, str16, str17, str18, str19, str20];
-    let random = Math.floor(Math.random() * 20) + 1;
-    let msg = arr[random];
-
+    let arrImg = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15]
+    let randomStr = Math.floor(Math.random() * 20) + 1;
+    let randomImg = Math.floor(Math.random() * 15) + 1;
+    let msg = arr[randomStr];
+    let image = arrImg[randomImg]
     let date = new Date();
     let day = "AM"
     let minutes = date.getMinutes()
@@ -78,13 +94,14 @@ function test() {
 
         let str = " <li class=\"left clearfix\">\n" +
             "                     <span class=\"chat-img1 pull-left\">\n" +
-            "                     <img src=\"https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg\" alt=\"User Avatar\" class=\"img-circle\">\n" +
+            "                     <img src=\"" +image+"\" id=\"image\" alt=\"User Avatar\" class=\"img-circle\">\n" +
             "                     </span>\n" +
             "                     <div class=\"chat-body1 clearfix\">\n" +
             "                        <p>" + msg + "</p>\n" +
             "\t\t\t\t\t\t<div class=\"chat_time pull-right\">" + curTime + "</div>\n" +
             "                     </div>\n" +
             "                  </li>";
+
         mySpan.innerHTML += str + "<br/>";
 
     }
