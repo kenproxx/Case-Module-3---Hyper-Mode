@@ -17,7 +17,7 @@ function sendMsg() {
 
         let str = " <li class=\"left clearfix\">\n" +
             "                     <span class=\"chat-img1 pull-right\">\n" +
-            "                     <img src=\"https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg\" alt=\"User Avatar\" class=\"img-circle\">\n" +
+            "                     <img src=\"/template/img/anhson.jpg\" alt=\"User Avatar\" class=\"img-circle\">\n" +
             "                     </span>\n" +
             "                     <div class=\"chat-body1 clearfix\">\n" +
             "                        <p>" + msg + "</p>\n" +
@@ -53,6 +53,18 @@ let str17 = "Học hành chán vler"
 let str18 = "khi bắt đầu, đừng nghe thằng nào nói cả"
 let str19 = "khi bắt đầu, hãy nghĩ tới thất bại"
 let str20 = "khi bắt đầu, đừng nghĩ tới thất bại"
+let str21 = "cần cù thì bù siêng năng"
+let str22 = "trời xanh mây trắng, anh yêu nắng hay là yêu em"
+let str23 = "lưu số em đi, khi nào má có cần con dâu thì gọi cho em"
+let str24 = "một cây làm chẳng nên non, 3 cây chụm lại thấy thừa 2 cây"
+let str25 = "cá không ăn muối cá ươn, con cãi cha mẹ con ăn cá ươn"
+let str26 = "làm thơ thì phải có vần, nếu không có vần thì nó hơi ngang"
+let str27 = "cục xì lầu, ông bê lắp"
+let str28 = "mỹ nhân thiên hạ nhiều vô kể, thử hỏi như Bích được mấy người"
+let str29 = "Nàng cởi quần xong báo giá, ta ngáo đá nghĩ đó là tình yêu"
+let str30 = "Ngày em đi anh chìm vào bóng tối, gió đông về biết giao phối cùng ai"
+let str31 = "Chờ em ra mở cổng, nhưng chồng em ra mở cửa"
+let str32 = "Nàng nhân từ tặng ta ít thương hại, trách não ta bại nghĩ đó là tình yêu"
 let img1 = "/template/img/girl 1.jpg";
 let img2 = "/template/img/girl 2.jpg";
 let img3 = "/template/img/girl 3.jpg";
@@ -70,13 +82,16 @@ let img14 = "/template/img/girl 14.jpg";
 let img15 = "/template/img/girl 15.jpg";
 
 
-function test() {
-    let arr = [str1, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, str13, str14, str15, str16, str17, str18, str19, str20];
-    let arrImg = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15]
-    let randomStr = Math.floor(Math.random() * 20) + 1;
-    let randomImg = Math.floor(Math.random() * 15) + 1;
+function autoChat() {
+    let arr = [str1, str2, str3, str4, str5, str6, str7, str8, str9, str10,
+        str11, str12, str13, str14, str15, str16, str17, str18, str19, str20,
+        str21, str22, str23, str24, str25, str26, str27, str28, str29, str30, str31, str32];
+    let arrImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15]
+    let randomStr = Math.floor(Math.random() * 32);
+    let randomImg = Math.floor(Math.random() * 15) ;
     let msg = arr[randomStr];
     let image = arrImg[randomImg]
+    console.log(image)
     let date = new Date();
     let day = "AM"
     let minutes = date.getMinutes()
@@ -94,7 +109,7 @@ function test() {
 
         let str = " <li class=\"left clearfix\">\n" +
             "                     <span class=\"chat-img1 pull-left\">\n" +
-            "                     <img src=\"" +image+"\" id=\"image\" alt=\"User Avatar\" class=\"img-circle\">\n" +
+            "                     <img src=\"" + image + "\" id=\"image\" alt=\"User Avatar\" class=\"img-circle\">\n" +
             "                     </span>\n" +
             "                     <div class=\"chat-body1 clearfix\">\n" +
             "                        <p>" + msg + "</p>\n" +
@@ -108,7 +123,7 @@ function test() {
     getMessages();
 }
 
-setInterval(test, 3000)
+setInterval(autoChat, 3000)
 
 
 const messages = document.getElementById('chat');
