@@ -267,11 +267,36 @@
                 </div>
             </div>
         </div>
-        <div class="row isotope-grid">
+    </div>
+</div>
+<!-- Product -->
+<div class="bg0 m-t-23 p-b-140" style="margin-top: 80px">
+    <div class="container">
+        <div class="flex-w flex-sb-m p-b-52">
+            <div class="flex-w flex-l-m filter-tope-group m-tb-10">
+                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+                    TẤT CẢ SẢN PHẨM
+                </button>
+            </div>
+
+            <div class="flex-w flex-c-m m-tb-10">
+                <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+                    <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
+                    <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+                    Filter
+                </div>
+
+                <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
+                    <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
+                    <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+                    Search
+                </div>
+            </div>
+        </div>
+
+        <div class="row " style="height: 100%">
             <c:forEach var="item" items="${itemList}">
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${item.getProduct().getCatalogID()}">
-                    <!-- Block2 -->
-                    <div class="block2">
+                    <div class="block2  col-xl-4 col-md-3 col-sm-2 ">
                         <div class="block2-pic hov-img0">
                             <img src="${item.getProduct().getImages()[0]}" width="315" height="350" alt="IMG-PRODUCT">
                             <a href="/home?action=view-detail&id=${item.getProduct().getProductID()}"
@@ -307,12 +332,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </c:forEach>
         </div>
     </div>
 </div>
-
 
 <!-- Footer -->
 <footer class="bg3 p-t-75 p-b-32">

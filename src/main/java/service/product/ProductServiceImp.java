@@ -15,12 +15,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProductServiceImp implements IProductService{
-    private Connection connection;
+    private Connection connection = DBHandle.getConnection();
     private PreparedStatement statement;
-
-    public ProductServiceImp() {
-        connection = DBHandle.getConnection();
-    }
 
     @Override
     public List<Product> getProductList() throws SQLException {
@@ -58,7 +54,7 @@ public class ProductServiceImp implements IProductService{
         statement = connection.prepareStatement(Query.SELECT_PRICE_BY_PRODUCT_ID);
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
-        if (resultSet.next()) {
+        while (resultSet.next()) {
             price = resultSet.getInt("price");
         }
         return price;

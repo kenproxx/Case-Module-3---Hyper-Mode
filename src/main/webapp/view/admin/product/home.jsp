@@ -127,7 +127,7 @@
                     </a>
                     <div class="collapse" id="bill">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"><a class="nav-link" href="/dashboard?action=view_user">Xem hóa đơn</a>
+                            <li class="nav-item"><a class="nav-link" href="/dashboard?action=view_bill">Xem hóa đơn</a>
                             </li>
                         </ul>
                     </div>
@@ -178,11 +178,11 @@
                                         <tr style="text-align: center">
                                             <td>${pageIndex[count.index]}</td>
                                             <td style="text-align: left">
-                                                <a href="/product?action=detail&type=product&id=${product.getDetailID()}"
+                                                <a href="/product?action=detail&type=product&id=${product.productID}"
                                                    class="nav-link">${product.getProductName()}</a>
                                             </td>
                                             <td style="width: 10px">
-                                                <a href="${pageContext.request.contextPath}/product?action=update&id=${product.getDetailID()}"
+                                                <a href="${pageContext.request.contextPath}/product?action=update&id=${product.productID}"
                                                    class="nav-link"><i class="icon-pencil"></i></a>
                                             </td>
                                             <td style="width: 10px">
