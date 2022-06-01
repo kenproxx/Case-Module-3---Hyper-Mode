@@ -13,28 +13,20 @@ public class Query {
             "FROM product\n" +
             "WHERE product.status != -1;";
 
-    public static final String SELECT_PRODUCT_OFFSET = "SELECT *\n" +
-            "FROM product_detail\n" +
-            "         JOIN product on product_detail.product_id = product.id\n" +
-            "         JOIN catalog on product.catalog_id = catalog.id\n" +
-            "         JOIN size on product_detail.size_id = size.id\n" +
-            "WHERE product_detail.status != -1 LIMIT ? OFFSET ?;";
-
     public static final String SELECT_PRODUCT_FOR_HOMEPAGE = "SELECT * FROM product\n" +
-            "JOIN attachment ON product.id = attachment.product.id\n" +
-            "GROUP BY product.name";
+            "JOIN attachment ON product.id = attachment.product_id\n" +
+            "GROUP BY product_name";
 
 
     public static final String SELECT_ALL_IMAGE_FROM_PRODUCT = "SELECT * FROM attachment\n" +
             "WHERE product_id = ?;";
-
 
     public static final String SELECT_PRODUCT_BY_PRODUCT_ID = "SELECT *\n" +
             "FROM product\n" +
             "WHERE product.id = ?";
 
     public static final String SELECT_PRICE_BY_PRODUCT_ID = "SELECT * FROM product\n" +
-            "JOIN sale ON product.id = sale.product.id\n" +
+            "JOIN sale ON product.id = sale.product_id\n" +
             "WHERE product.id = ?\n" +
             "ORDER BY created_date DESC LIMIT 1;";
 
@@ -47,7 +39,7 @@ public class Query {
     public static final String INSERT_PRODUCT_IMAGE = "INSERT INTO attachment (product_id, image_link, status) VALUES (?,?,?)";
 
     public static final String UPDATE_PRODUCT = "UPDATE product\n" +
-            "SET product.name = ?,\n" +
+            "SET product_name = ?,\n" +
             "    description = ?,\n" +
             "    status = ?\n" +
             "WHERE id = ?;";

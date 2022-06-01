@@ -186,7 +186,7 @@
                                                    class="nav-link"><i class="icon-pencil"></i></a>
                                             </td>
                                             <td style="width: 10px">
-                                                <a class="nav-link" href="#" onclick=confirmDelete()><i
+                                                <a class="nav-link" href="#" onclick=confirmDelete(${product.productID})><i
                                                         class="icon-trash"></i></a>
                                             </td>
                                         </tr>
@@ -247,9 +247,10 @@
 <script src="${pageContext.request.contextPath}/resources/js/off-canvas.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/misc.js"></script>
 <script>
-    function confirmDelete() {
+    function confirmDelete(id) {
+
         if (confirm("Bạn có chắc chắn muốn xoá ?")) {
-            document.location.href = '${pageContext.request.contextPath}/product?action=delete&id=${product.getDetailID()}&confirm=ok'
+            document.location.href = "/product?action=delete&id=" + id + "&confirm=ok";
         }
     }
 </script>

@@ -54,12 +54,13 @@ public class ProductServiceImp implements IProductService{
 
 
     public int price(int id) throws SQLException {
-        int price;
+        int price = 0;
         statement = connection.prepareStatement(Query.SELECT_PRICE_BY_PRODUCT_ID);
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
-        resultSet.first();
-        price = resultSet.getInt("price");
+        if (resultSet.next()) {
+            price = resultSet.getInt("price");
+        }
         return price;
     }
 
@@ -164,7 +165,7 @@ public class ProductServiceImp implements IProductService{
 
     @Override
     public boolean deleteProduct(int id) throws SQLException {
-        String query = "UPDATE product SET status = -1 WHERE id = ?";
+        String query = "UPDATE product SET product.status = -1 WHERE product.id = ?";
         statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         return statement.executeUpdate() != -1;
