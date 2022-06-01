@@ -298,7 +298,12 @@
 									BỘ SƯU TẬP CHỊ EM
 								</span>
                         </div>
-
+                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+                            <a href="/home?action=product"
+                               class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                                Xem ngay
+                            </a>
+                        </div>
 
                     </div>
                 </div>
@@ -315,7 +320,7 @@
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                            <a href="/view/user/product.jsp"
+                            <a href="/home?action=product"
                                class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Xem ngay
                             </a>
@@ -334,7 +339,7 @@
 								</span>
                         </div>
                         <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                            <a href="/view/user/product.jsp"
+                            <a href="/home?action=product"
                                class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Xem ngay
                             </a>
@@ -393,7 +398,7 @@
                          alt="IMG-BANNER">
 
 
-                    <a href="/view/user/product.jsp"
+                    <a href="/home?action=product"
                        class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                         <div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
@@ -420,7 +425,7 @@
                     <img src="${pageContext.request.contextPath}/template/img/girl%201.jpg"
                          alt="IMG-BANNER">
 
-                    <a href="/view/user/product.jsp"
+                    <a href="/home?action=product"
                        class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                         <div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
@@ -446,7 +451,7 @@
                 <div class="block1 wrap-pic-w">
                     <img src="${pageContext.request.contextPath}/template/img/girl%202.jpg" alt="IMG-BANNER">
 
-                    <a href="/view/user/product.jsp"
+                    <a href="/home?action=product"
                        class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
                         <div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">

@@ -55,7 +55,7 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
   <!--===============================================================================================-->
   <style type="text/css">
-    .vnd:after { content:'VNĐ'; }
+    .vnd:after { content:'VNĐ / giờ'; }
   </style>
 </head>
 <body class="animsition">
@@ -256,12 +256,12 @@
       </div>
     </div>
     <div class="header-cart-buttons flex-w w-full">
-      <a href="shoping-cart.html"
+      <a href="/cart"
          class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
         Xem giỏ hàng
       </a>
 
-      <a href="shoping-cart.html"
+      <a href="/cart"
          class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
         Thanh toán
       </a>
@@ -279,12 +279,6 @@
       Trang chủ
       <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
     </a>
-
-    <a href="/home?action=product" class="stext-109 cl8 hov-cl1 trans-04">
-      ${product.getCatalogName()}
-      <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-    </a>
-
     <span class="stext-109 cl4">
       ${product.getProductName()}
     </span>
@@ -365,7 +359,7 @@
                 </div>
                 <c:url value="/addToCart?action=cart&id=${product.getProductID()}" var="addtoCart"/>
                 <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                  <a href="${addtoCart}" style="text-decoration: none; color: white">Thêm vào giỏ hàng</a>
+                  <a href="${addtoCart}" style="text-decoration: none; color: white">Thuê</a>
                 </button>
               </div>
             </div>
@@ -440,7 +434,7 @@
                     <div class="size-207">
                       <div class="flex-w flex-sb-m p-b-17">
 													<span class="mtext-107 cl2 p-r-20">
-														Linh Cute
+														8nam1nguoiban aka thanks Phong
 													</span>
 
                         <span class="fs-18 cl11">
@@ -724,67 +718,6 @@
               feugiat.
             </p>
 
-            <!--  -->
-            <div class="p-t-33">
-              <div class="flex-w flex-r-m p-b-10">
-                <div class="size-203 flex-c-m respon6">
-                  Size
-                </div>
-
-                <div class="size-204 respon6-next">
-                  <div class="rs1-select2 bor8 bg0">
-                    <select class="js-select2" name="time">
-                      <option>Choose an option</option>
-                      <option>Size S</option>
-                      <option>Size M</option>
-                      <option>Size L</option>
-                      <option>Size XL</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex-w flex-r-m p-b-10">
-                <div class="size-203 flex-c-m respon6">
-                  Color
-                </div>
-
-                <div class="size-204 respon6-next">
-                  <div class="rs1-select2 bor8 bg0">
-                    <select class="js-select2" name="time">
-                      <option>Choose an option</option>
-                      <option>Red</option>
-                      <option>Blue</option>
-                      <option>White</option>
-                      <option>Grey</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex-w flex-r-m p-b-10">
-                <div class="size-204 flex-w flex-m respon6-next">
-                  <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                    <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                      <i class="fs-16 zmdi zmdi-minus"></i>
-                    </div>
-
-                    <input class="mtext-104 cl3 txt-center num-product" type="number"
-                           name="num-product" value="1">
-
-                    <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                      <i class="fs-16 zmdi zmdi-plus"></i>
-                    </div>
-                  </div>
-
-                  <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-            </div>
 
             <!--  -->
             <div class="flex-w flex-m p-l-100 p-t-40 respon7">
@@ -895,7 +828,7 @@
   $('.js-addcart-detail').each(function () {
     var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
     $(this).on('click', function () {
-      swal(nameProduct, "đã thêm vào Giỏ hàng !", "success");
+      swal(nameProduct, "đang chờ duyệt để thuê!", "success");
     });
   });
 
