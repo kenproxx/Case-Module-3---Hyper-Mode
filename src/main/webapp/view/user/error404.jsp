@@ -286,186 +286,22 @@
 </div>
 
 <!-- Slider -->
-<section class="section-slide">
-    <div class="wrap-slick1">
-        <div class="slick1">
-            <div class="item-slick1"
-                 style="background-image: url(${pageContext.request.contextPath}/template/img/lebong.jpg);">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30 respond5">
-                        <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-101 cl2 respond2">
-									BỘ SƯU TẬP CHỊ EM
-								</span>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="item-slick1"
-                 style="background-image: url(${pageContext.request.contextPath}/template/img/amee.jpg);">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30 respond5">
-                        <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-								<span class="ltext-101 cl2 respond2">
-									GÁI 2022
-								</span>
-                        </div>
-
-                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                            <a href="/view/user/product.jsp"
-                               class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                Xem ngay
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item-slick1"
-                 style="background-image: url(${pageContext.request.contextPath}/resources/images/slide-lisa.jpg);">
-                <div class="container h-full">
-                    <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-                        <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-									BỘ SƯU TẬP HOT
-								</span>
-                        </div>
-                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                            <a href="/view/user/product.jsp"
-                               class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                Xem ngay
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Chat Global -->
 
-<script src="https://use.fontawesome.com/45e03a14ce.js"></script>
-<div class="main_section">
-    <div class="container">
-        <div class="chat_container">
-            <!--chat_sidebar-->
 
-
-            <div class="col-sm-12 message_section " style="margin-top: 95px">
-                <div class="row">
-                    <div class="new_message_head">
-                        <div class="pull-left"><button><i class="fa fa-plus-square-o" aria-hidden="true"></i> New Message</button></div><div class="pull-right"><div class="dropdown">
-
-
-                    </div></div>
-                    </div><!--new_message_head-->
-
-                    <div class="chat_area chat" id="chat" name="chat">
-                    <div class="chat-sm"></div>
-                    </div><!--chat_area-->
-                    <div class="message_write">
-                        <textarea class="form-control" id="msg" name="msg" placeholder="type a message"></textarea>
-                        <div class="clearfix"></div>
-                        <div class="chat_bottom"><a href="#" class="pull-left upload_btn"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                            Add Files</a>
-                            <button onclick="sendMsg()" class="pull-right btn btn-success">Send</button>
-                        </div>
-                    </div>
-                </div>
-            </div> <!--message_section-->
-        </div>
-    </div>
-</div>
 
 
 <!-- Banner -->
 <div class="sec-banner bg0 p-t-80 p-b-50 ">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%204.jpg"
-                         alt="IMG-BANNER">
-
-
-                    <a href="/view/user/product.jsp"
-                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									HOT PLAYER
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Trending
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Xem ngay
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="col-12 m-lr-auto text-center " style="margin-top: 40px; padding-bottom: 80px">
+                <h1>404</h1>
+                <h3>KHÔNG TÌM THẤY TRANG BẠN YÊU CẦU</h3>
             </div>
 
-            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%201.jpg"
-                         alt="IMG-BANNER">
 
-                    <a href="/view/user/product.jsp"
-                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									HOT PLAYER
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Trending
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Xem ngay
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 p-b-30 m-lr-auto">
-                <!-- Block1 -->
-                <div class="block1 wrap-pic-w">
-                    <img src="${pageContext.request.contextPath}/template/img/girl%202.jpg" alt="IMG-BANNER">
-
-                    <a href="/view/user/product.jsp"
-                       class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									HOT PLAYER
-								</span>
-
-                            <span class="block1-info stext-102 trans-04">
-									Trending
-								</span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Xem ngay
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
